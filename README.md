@@ -1,2 +1,2 @@
-# archood.github.io
-Cole's Website
+# The Archood website
+This is a readme-file!
