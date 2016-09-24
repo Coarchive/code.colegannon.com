@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 <style>
 body{
 background-color:white;
@@ -8,8 +9,9 @@ background-color:white;
                 background-position:center;
 }
     div{
-        font-family: "Comic Sans MS", cursive, sans-serif;
-        font-size: "17px";
+        position: fixed;
+        font-family: font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
         color: black;
         text-align: center;
         top: 40%;
@@ -74,8 +76,8 @@ document.getElementById('sans').style.color='white';
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
     document.getElementById('sans').innerHTML="I'm you know what? I think I'm going to start counting from one...";
-    setTimeout(function(){location.reload()},4500)
-}else{document.getElementById('sans').innerHTML="Judging by the look on your face, you've been here "+timesHere+" times.";}
+    setTimeout(function(){location.reload()},5600)
+}else{document.getElementById('sans').innerHTML=String(timesHere)}
 document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
