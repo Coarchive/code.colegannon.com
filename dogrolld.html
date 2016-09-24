@@ -126,21 +126,21 @@ function grn(n){
 }
 onload=function wipe(){
     setTimeout(function(){
-var nope = document.createElement('audio');
-nope.autoplay=true;
-nope.loop=true
+var alexa = document.createElement('audio');
+alexa.autoplay=true;
+alexa.loop=true
 switch(grn(6)){
     case 1:
         console.log(1)
-        nope.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
+        alexa.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
     break;
     case 2:
         console.log(2)
-        nope.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
+        alexa.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
     break
     case 3:
         console.log(3)
-        nope.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
+        alexa.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
     break;
     case 4:
         console.log(4)
@@ -148,16 +148,21 @@ switch(grn(6)){
         console.log(5)
     case 6:
         console.log(6)
-        nope.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
-        nope.playbackRate=Math.random()+0.6;
-        nope.volume=2;
+        alexa.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
+        alexa.playbackRate=Math.random()+0.6;
+        alexa.volume=2;
         
 };
-document.body.appendChild(nope);
+var renf = /*"<div style='text-align:center;'>That looks like the face of someone who's been here `+vst+` times</div>";*/
+document.body.appendChild(alexa);
 
 console.debug("Sucess! Named variables in a similar fasion to Alphys. Wink wink.")},500)
+document.write(`<img style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;' src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'></img>`);
 }
 </script>
-    <img style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;' src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'></img>
+<div style='display:none'>{title}</div>
+<div style='display:none'>{menu}</div>
+<div style='display:none'>{content}</div>
+<div style='padding: 20px; width:100%; text-align:center;'>{footer}</div>
 </body>
 </html>
