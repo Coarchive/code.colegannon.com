@@ -75,6 +75,7 @@ nope.volume=0.4;
 }
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
+    document.getElementById('sans').style.fontSize='12px';
     document.getElementById('sans').innerHTML="I'm you know what? I think I'm going to start counting from one...";
     setTimeout(function(){location.reload()},5600)
 }else{document.getElementById('sans').innerHTML=String(timesHere)}
