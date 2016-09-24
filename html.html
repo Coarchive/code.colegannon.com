@@ -58,9 +58,9 @@
         <textarea id='foo' class='centered textarea'></textarea>
         <button onclick='test()'>Test</button>
         <script>
-        var ta=document.getElementById('foo');
+        var od,
+            ta=document.getElementById('foo');
         function test(){
-            var od;
             if(!od){
                 console.log("Opening new window")
             od = open('about:blank');
