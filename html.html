@@ -61,13 +61,17 @@
         var od,
             ta=document.getElementById('foo');
         function test(){
-            if(!od.closed){
+            if(!od){
                 console.log("Opening new window")
             od = open('about:blank');
             }else{
+                if(od.closed){
+                console.log("Window was closed! Opening new window")
+                od = open('about:blank');
+                }else{
                 console.log("Keeping window")
                 od.focus();
-            }
+            }}
             od.document.open()//This clears the document incase you managed to screw up something. It seems that document.write can be a bit buggy at times.
             //For instance, if you click the button again, sometimes it doesn't even overwrite the current document. It just adds onto it. This (should) fix it.
             od.document.write(ta.value);
