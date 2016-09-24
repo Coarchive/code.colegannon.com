@@ -1,0 +1,73 @@
+<html>
+    <head>
+<link href="https://fonts.googleapis.com/css?family=Raleway:600,700" rel="stylesheet">
+        <style>
+            body{
+                background:url('https://dl.dropboxusercontent.com/s/y0e2li2411vg79d/Pie.jpg?dl=0');
+                background-size:cover;
+                background-position:center;
+            }
+            textarea{
+                font-family: 'Raleway', sans-serif;\
+                font-weight: bold;
+                font-size:14;
+                color:rgba(0, 0, 0, 0);
+                background:transparent;
+                border:3px solid white;
+            }
+            .centered {
+              position: fixed;
+              top: 48%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .textarea {
+                height: 140;
+                width:  300;
+                transition: all 700ms;
+            }
+            .textarea:hover{
+                height: 290;
+                width:  620;
+                color:rgba(0, 0, 0, 1);
+                opacity:1;
+                background-color: rgba(255, 255, 255, 0.6);
+                top:47%;
+            }
+            button {
+              position: fixed;
+              top: 67%;
+              display: inline-block;
+              background-color: #25A0EF;
+              border: 2px solid #196EA5;
+              left: 50%;
+              color:white;
+              font-size:17;
+              width: 144;
+              height: 50;
+              transform: translate(-50%, -50%);
+              transition: all 500ms;
+            }
+            button:hover{
+                border: 3px solid #FFF;
+                width: 300;
+            }
+            /*
+                CSS much?
+                Yeah. It's really cool what you can do with the stuff
+            */
+        </style>
+    </head>
+    <body>
+        <textarea id='foo' class='centered textarea'></textarea>
+        <button onclick='test()'>Test</button>
+        <script>
+        var ta=document.getElementById('foo'),od=null;
+        function test(){
+            if(!od)od = open('about:blank');
+            od.document.innerHTML=ta.value;
+        }
+        //I may have broke it. Too lazy to check.
+        </script>
+    </body>
+</html>
