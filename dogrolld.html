@@ -4,6 +4,8 @@
 <style>
 body{
 background-color:white;
+                background-size:cover;
+                background-position:center;
 }
     div{
         font-family: "Comic Sans MS", cursive, sans-serif;
@@ -11,23 +13,6 @@ background-color:white;
         color: black;
         text-align: center;
         top: -40%;
-    }
-    #bg {
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
-}
-#bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
 }
 </style>
 </head>
@@ -80,18 +65,17 @@ switch(grn(6)){
 }
 imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
 }else{
-imga.src='resources/Sans.jpg';
+imga.src='';
+document.body.background='url("resources/Sans.jpg")'
 nope.src='resources/sans.ogg';
 nope.volume=0.4;
-document.getElementById('joo').id='bg';
 }
 if(timesHere>2)document.getElementById('sans').innerHTML="Judging by the look on your face, you've been here "+timesHere+" times.";
 document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
 </script>
-    <div id='joo'>
-    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img><div>
+    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
     <div id='sans'></div>
 </body>
 </html>
