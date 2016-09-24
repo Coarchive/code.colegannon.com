@@ -43,6 +43,7 @@ var imga=document.getElementById('foo');
 var nope = document.createElement('audio');
 nope.autoplay=true;
 nope.loop=true
+nope.id='nope';
 if(timesHere<7){
 switch(grn(6)){
     case 1:
@@ -89,8 +90,9 @@ console.debug("Hell No")},200)
 
 function rikd(){
     document.getElementById('content').hidden=false;
+    document.getElementById('nope').pause();
     document.getElementById('foobar').src='//rick.amigocraft.net'
-    document.getElementsByClassName('rick')[0].src='resources/Flowey.png'
+    setTimeout(function(){document.getElementsByClassName('rick')[0].src='resources/Flowey.png'},3000)
 }
             //NOT MINE I TOOK IT FROM ANOTHER SITE
             //Just look up konami.js, you'll find it.
@@ -190,9 +192,7 @@ function rikd(){
 
 	return konami;
 };
-setTimeout(function(){new Konami(function(){
-    rikd();
-})},3000)
+setTimeout(function(){new Konami(rikd)},3000)
 </script>
     <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
     <div id='sans'></div>
