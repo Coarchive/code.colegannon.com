@@ -66,7 +66,7 @@ imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
 imga.src='resources/Sans.jpg';
 nope.src='resources/sans.ogg';
 }
-timesHere>2&&document.getElementById('sans').innerHTML="Judging by the look on your face, you've been here "+timesHere+" times."
+if(timesHere>2)document.getElementById('sans').innerHTML="Judging by the look on your face, you've been here "+timesHere+" times.";
 document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
