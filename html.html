@@ -52,22 +52,17 @@
                 border: 3px solid #FFF;
                 width: 300;
             }
-            /*
-                CSS much?
-                Yeah. It's really cool what you can do with the stuff
-            */
         </style>
     </head>
     <body>
         <textarea id='foo' class='centered textarea'></textarea>
         <button onclick='test()'>Test</button>
         <script>
-        var ta=document.getElementById('foo'),od=null;
+        var ta=document.getElementById('foo');
         function test(){
-            if(!od)od = open('about:blank');
-            od.document.innerHTML=ta.value;
+            var od = open('about:blank');
+            od.document.write(ta.value);
         }
-        //I may have broke it. Too lazy to check.
         </script>
     </body>
 </html>
