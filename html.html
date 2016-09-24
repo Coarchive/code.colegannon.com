@@ -60,7 +60,9 @@
         <script>
         var ta=document.getElementById('foo');
         function test(){
+            if(!od){
             var od = open('about:blank');
+            }
             od.document.write(ta.value);
         }
         </script>
