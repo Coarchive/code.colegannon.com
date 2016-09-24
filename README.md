@@ -1,2 +1,2 @@
-# The Archood website
-This is a readme-file!
+# The Arcanehood website
+Cole's Webpage
