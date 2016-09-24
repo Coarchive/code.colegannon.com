@@ -73,13 +73,16 @@ imga.src='';
 document.body.style.background="url('resources/Sans.jpg')"
 nope.src='resources/sans.ogg';
 nope.volume=0.4;
-document.getElementById('sans').style=''
-document.getElementById('sans').style.textAlign='center'
+document.getElementById('sans').style='';
+document.getElementById('sans').style.textAlign='center';
 document.getElementById('sans').style.color='white';
 document.getElementById('sans').style.top='5%'
 }
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
+    document.getElementById('sans').style=''
+document.getElementById('sans').style.color='white';
+document.getElementById('sans').style.top='5%'
     document.getElementById('sans').innerHTML="I'm you know what? I think I'm going to start counting from one...";
     setTimeout(function(){location.reload()},5600)
 }else{document.getElementById('sans').innerHTML=String(timesHere)}
