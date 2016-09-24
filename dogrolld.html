@@ -3,122 +3,24 @@
 <head>
 <style>
 body{
-background-color:black;
+background-color:white;
 }
+    div{
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: "17px";
+        color: black;
+        text-align: center;
+        top: -40%;
+    }
 </style>
 </head>
-<body class='wsite-theme-light'>
+<body>
 <script>
-/*
- * Konami-JS ~ 
- * :: Now with support for touch events and multiple instances for 
- * :: those situations that call for multiple easter eggs!
- * Code: https://github.com/snaptortoise/konami-js
- * Examples: http://www.snaptortoise.com/konami-js
- * Copyright (c) 2009 George Mandis (georgemandis.com, snaptortoise.com)
- * Version: 1.4.6 (3/2/2016)
- * Licensed under the MIT License (http://opensource.org/licenses/MIT)
- * Tested in: Safari 4+, Google Chrome 4+, Firefox 3+, IE7+, Mobile Safari 2.2.1 and Dolphin Browser
- */
-
-var Konami = function (callback) {
-	var konami = {
-		addEvent: function (obj, type, fn, ref_obj) {
-			if (obj.addEventListener)
-				obj.addEventListener(type, fn, false);
-			else if (obj.attachEvent) {
-				// IE
-				obj["e" + type + fn] = fn;
-				obj[type + fn] = function () {
-					obj["e" + type + fn](window.event, ref_obj);
-				}
-				obj.attachEvent("on" + type, obj[type + fn]);
-			}
-		},
-		input: "",
-		pattern: "38384040373937396665",
-		load: function (link) {
-			this.addEvent(document, "keydown", function (e, ref_obj) {
-				if (ref_obj) konami = ref_obj; // IE
-				konami.input += e ? e.keyCode : event.keyCode;
-				if (konami.input.length > konami.pattern.length)
-					konami.input = konami.input.substr((konami.input.length - konami.pattern.length));
-				if (konami.input == konami.pattern) {
-					konami.code(link);
-					konami.input = "";
-					e.preventDefault();
-					return false;
-				}
-			}, this);
-			this.iphone.load(link);
-		},
-		code: function (link) {
-			window.location = link
-		},
-		iphone: {
-			start_x: 0,
-			start_y: 0,
-			stop_x: 0,
-			stop_y: 0,
-			tap: false,
-			capture: false,
-			orig_keys: "",
-			keys: ["UP", "UP", "DOWN", "DOWN", "LEFT", "RIGHT", "LEFT", "RIGHT", "TAP", "TAP"],
-			code: function (link) {
-				konami.code(link);
-			},
-			load: function (link) {
-				this.orig_keys = this.keys;
-				konami.addEvent(document, "touchmove", function (e) {
-					if (e.touches.length == 1 && konami.iphone.capture == true) {
-						var touch = e.touches[0];
-						konami.iphone.stop_x = touch.pageX;
-						konami.iphone.stop_y = touch.pageY;
-						konami.iphone.tap = false;
-						konami.iphone.capture = false;
-						konami.iphone.check_direction();
-					}
-				});
-				konami.addEvent(document, "touchend", function (evt) {
-					if (konami.iphone.tap == true) konami.iphone.check_direction(link);
-				}, false);
-				konami.addEvent(document, "touchstart", function (evt) {
-					konami.iphone.start_x = evt.changedTouches[0].pageX;
-					konami.iphone.start_y = evt.changedTouches[0].pageY;
-					konami.iphone.tap = true;
-					konami.iphone.capture = true;
-				});
-			},
-			check_direction: function (link) {
-				x_magnitude = Math.abs(this.start_x - this.stop_x);
-				y_magnitude = Math.abs(this.start_y - this.stop_y);
-				x = ((this.start_x - this.stop_x) < 0) ? "RIGHT" : "LEFT";
-				y = ((this.start_y - this.stop_y) < 0) ? "DOWN" : "UP";
-				result = (x_magnitude > y_magnitude) ? x : y;
-				result = (this.tap == true) ? "TAP" : result;
-
-				if (result == this.keys[0]) this.keys = this.keys.slice(1, this.keys.length);
-				if (this.keys.length == 0) {
-					this.keys = this.orig_keys;
-					this.code(link);
-				}
-			}
-		}
-	}
-
-	typeof callback === "string" && konami.load(callback);
-	if (typeof callback === "function") {
-		konami.code = callback;
-		konami.load();
-	}
-
-	return konami;
-};
-setTimeout(function(){new Konami(function(){location='//rick.amigocraft.net'})},3000)
 //Localstorage thing
-var timesHere = 1+localStorage.getItem('dogRolled');
+var timesHere = Number(localStorage.getItem('dogRolled'));
+localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
-var vst = timesHere++;
+
 /*
 var element=new Image;Object.defineProperty(element,"id",{get:function(){document.body.innerHTML="<h1 style='text-allign:center;'>That interested?</h1>"; console.clear()}});console.log("%cHello",element);*/
 function grn(n){
@@ -126,21 +28,28 @@ function grn(n){
 }
 onload=function wipe(){
     setTimeout(function(){
-var alexa = document.createElement('audio');
-alexa.autoplay=true;
-alexa.loop=true
+var imga=document.getElementById('foo');
+var nope = document.createElement('audio');
+nope.autoplay=true;
+nope.loop=true
+if(timesHere<7){
 switch(grn(6)){
     case 1:
         console.log(1)
-        alexa.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
+        nope.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
+                nope.volume=0.6;
+
     break;
     case 2:
         console.log(2)
-        alexa.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
+        nope.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
+                nope.volume=0.4;
+
     break
     case 3:
         console.log(3)
-        alexa.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
+        nope.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
+        nope.volume=0.6;
     break;
     case 4:
         console.log(4)
@@ -148,21 +57,21 @@ switch(grn(6)){
         console.log(5)
     case 6:
         console.log(6)
-        alexa.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
-        alexa.playbackRate=Math.random()+0.6;
-        alexa.volume=2;
+        nope.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
+        nope.playbackRate=Math.random()+0.6;
         
-};
-var renf = /*"<div style='text-align:center;'>That looks like the face of someone who's been here `+vst+` times</div>";*/
-document.body.appendChild(alexa);
-
-console.debug("Sucess! Named variables in a similar fasion to Alphys. Wink wink.")},500)
-document.write(`<img style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;' src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'></img>`);
+}
+imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
+}else{
+imga.src='resources/Sans.jpg';
+nope.src='resources/sans.ogg';
+}
+timesHere>2&&document.getElementById('sans').innerHTML="Judging by the look on your face, you've been here "+timesHere+" times."
+document.body.appendChild(nope);
+console.debug("Hell No")},200)
 }
 </script>
-<div style='display:none'>{title}</div>
-<div style='display:none'>{menu}</div>
-<div style='display:none'>{content}</div>
-<div style='padding: 20px; width:100%; text-align:center;'>{footer}</div>
+    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
+    <div id='sans'></div>
 </body>
 </html>
