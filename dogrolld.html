@@ -82,6 +82,8 @@ nope.volume=0.4;
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
     document.getElementById('sans').innerHTML="nope.";
+    if(localStorage.getItem('ricked')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got ricked!";
+    setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400)}
     setTimeout(function(){location.reload()},5600)
 }else{document.getElementById('sans').innerHTML=String(timesHere)}
 document.body.appendChild(nope);
