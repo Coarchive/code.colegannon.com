@@ -1,0 +1,70 @@
+<html>
+    <head>
+<link href="https://fonts.googleapis.com/css?family=Raleway:600,700" rel="stylesheet">
+<link rel="icon" href="Favicon.png" type="image/png" >
+        <title>HTML Tester</title>
+        <style>
+            body{
+                background:url('https://dl.dropboxusercontent.com/s/y0e2li2411vg79d/Pie.jpg?dl=0');
+                background-size:cover;
+                background-position:center;
+            }
+            textarea{
+                font-family: 'Raleway', sans-serif;\
+                font-weight: bold;
+                font-size:14;
+                color:rgba(0, 0, 0, 0);
+                background:transparent;
+                border:3px solid white;
+            }
+            .centered {
+              position: fixed;
+              top: 48%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .textarea {
+                height: 280;
+                width:  600;
+                border: 2px solid black;
+            }
+            button {
+              position: fixed;
+              top: 67%;
+              display: inline-block;
+              background-color: #25A0EF;
+              border: 2px solid #196EA5;
+              left: 50%;
+              color:white;
+              font-size:17;
+              width: 144;
+              height: 50;
+              transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id='foo' class='centered textarea'></textarea>
+        <button onclick='test()'>Test</button>
+        <script>
+        var od,
+            ta=document.getElementById('foo');
+        function test(){
+            if(!od){
+                console.log("Opening new window")
+            od = open('about:blank');
+            }else{
+                if(od.closed){
+                console.log("Window was closed! Opening new window")
+                od = open('about:blank');
+                }else{
+                console.log("Keeping window")
+                od.focus();
+            }}
+            od.document.open()//This clears the document incase you managed to screw up something. It seems that document.write can be a bit buggy at times.
+            //For instance, if you click the button again, sometimes it doesn't even overwrite the current document. It just adds onto it. This (should) fix it.
+            od.document.write(ta.value);
+        }
+        </script>
+    </body>
+</html>
