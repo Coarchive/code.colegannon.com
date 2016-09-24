@@ -12,6 +12,23 @@ background-color:white;
         text-align: center;
         top: -40%;
     }
+    #bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
 </style>
 </head>
 <body>
@@ -72,7 +89,8 @@ document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
 </script>
-    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
+    <div id="bg">
+    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img><div>
     <div id='sans'></div>
 </body>
 </html>
