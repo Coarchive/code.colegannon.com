@@ -76,7 +76,9 @@ document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
 if(timesHere>10){
-    localStorage.removeItem('dogRolled')
+    localStorage.removeItem('dogRolled');
+    document.getElementById('sans').innerHTML="I'm you know what? I think I'm going to start counting from one...";
+    setTimeout(function(){location.reload()},4500)
 }
 </script>
     <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
