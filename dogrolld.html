@@ -87,7 +87,11 @@ document.body.appendChild(nope);
 console.debug("Hell No")},200)
 }
 
-function rikd(){}
+function rikd(){
+    document.getElementById('content').hidden=false;
+    document.getElementById('foobar').src='//rick.amigocraft.net'
+    document.getElementsByClassName('rick')[0].src='resources/Flowey.png'
+}
             //NOT MINE I TOOK IT FROM ANOTHER SITE
             //Just look up konami.js, you'll find it.
             
@@ -193,7 +197,7 @@ setTimeout(function(){new Konami(function(){
     <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
     <div id='sans'></div>
     <div id="content" hidden='true'>
-            <iframe width="100%" height="100%" frameborder="0" src=""/>
+            <iframe id='foobar' width="100%" height="100%" frameborder="0" src=""/>
         </div>
 </body>
 </html>
