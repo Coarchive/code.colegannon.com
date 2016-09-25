@@ -82,7 +82,7 @@ imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
 }else{
 imga.src='resources/Sans.png';
 nope.src='resources/sans.ogg';
-nope.volume=0.4;
+nope.volume=0.7;
 }
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
@@ -91,8 +91,7 @@ if(timesHere>2)    if(timesHere>10){
     setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400)}
     setTimeout(function(){location.reload()},5600)
 }else{document.getElementById('sans').innerHTML=String(timesHere)}
-document.body.appendChild(nope);
-console.debug("Hell No")},200)
+document.body.appendChild(nope);},200)
 }
 function rikd(){
     location='ricked';
