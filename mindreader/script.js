@@ -36,3 +36,5 @@ navigator.getBattery().then(function (batteryManager) {
   console.error('Failed to get Battery');
   console.error(err);
 });
+
+var os = navigator.userAgent.slice(navigator.userAgent.indexOf('(')+1, navigator.userAgent.indexOf(')'));
