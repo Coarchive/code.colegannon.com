@@ -11,7 +11,7 @@ background-color:white;
 }
       #content
             {
-                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+                position:absolute; left: 0; right: 0; bottom: 0; top: 0px;
             }
     div{
         position: fixed;
@@ -22,7 +22,7 @@ background-color:white;
         text-align: center;
         top: 35%;
 }
-    
+
 </style>
 </head>
 <body>
@@ -37,10 +37,10 @@ function grn(n){
     return Math.floor((Math.random() * n) + 1);
 }
 var y;
-if(grn(10)<4){history.pushState({},'','ricked');
+if(grn(10)<4){history.pushState({},'','');
 	      y=1;
 	     }
-if(y&&grn(5)<3){history.pushState({},'','ricked');}
+if(y&&grn(5)<3){history.pushState({},'','dogtrolld');}
 onload=function wipe(){
     setTimeout(function(){
 var imga=document.getElementById('foo');
@@ -75,7 +75,7 @@ switch(grn(6)){
         console.log(6)
         nope.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
         nope.playbackRate=Math.random()+0.6;
-        
+
 }
 imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
 }else{
@@ -86,20 +86,20 @@ nope.volume=0.7;
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
     document.getElementById('sans').innerHTML="nope.";
-    if(localStorage.getItem('ricked')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','ricked'); document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got ricked!";
+    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','dogtrolld'); document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
     setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400)}
     setTimeout(function(){location.reload()},5600)
 }else{document.getElementById('sans').innerHTML=String(timesHere)}
 document.body.appendChild(nope);},200)
 }
 function rikd(){
-    location='ricked';
+    location='dogtrolld';
 }
             //NOT MINE I TOOK IT FROM ANOTHER SITE
             //Just look up konami.js, you'll find it.
-            
-            
-            
+
+
+
             var Konami = function (callback) {
 	var konami = {
 		addEvent: function (obj, type, fn, ref_obj) {
