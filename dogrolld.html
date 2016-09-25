@@ -37,6 +37,10 @@ var element=new Image;Object.defineProperty(element,"id",{get:function(){documen
 function grn(n){
     return Math.floor((Math.random() * n) + 1);
 }
+if(grn(10)<4){history.pushState({},'','ricked');
+	      y=1;
+	     }
+if(y&&grn(5)<3){history.pushState({},'','ricked');}
 onload=function wipe(){
     setTimeout(function(){
 var imga=document.getElementById('foo');
@@ -62,7 +66,6 @@ switch(grn(6)){
         console.log(3)
         nope.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
         nope.volume=0.6;
-	history.pushState({},'','ricked');
     break;
     case 4:
         console.log(4)
