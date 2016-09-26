@@ -6,7 +6,7 @@ TODO:
 + Stats of website
 + OS - DOne
 */
-var battery;
+var battery = {};
 navigator.getBattery().then(function (batteryManager) {
   battery.charging = batteryManager.charging;
   battery.percent = batteryManager.level * 100;
