@@ -66,10 +66,12 @@ var theScreen = {
     }
   },
   canTurnOff: function () {
-    return screen.enabled || screen.mozEnabled || screen.webkitEnabled;
+    return typeof (screen.enabled || screen.mozEnabled || screen.webkitEnabled) !== 'undefined');
   },
   depth: {
     pixel: screen.pixelDepth,
     color: screen.colorDepth
   }
 };
+
+var permissions = {};
