@@ -21,6 +21,14 @@ background-color:white;
         text-align: center;
         top: 35%;
 }
+	.centered{
+	margin: 0;
+        position: absolute;
+        top: 50%;
+    	left: 50%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%)
+	}
 </style>
 </head>
 <body>
@@ -36,8 +44,7 @@ var element=new Image;Object.defineProperty(element,"id",{get:function(){
 	document.body.style.backgroundColor='black';
 	document.getElementById('foo').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
 	nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';
-	document.getElementById('foo').style.left='40%';
-	document.getElementById('foo').style.top='25%';
+	document.getElementById('foo').className='centered';
 	document.getElementById('sans').hidden=true;
 }});console.log("%cHello",element);
 function grn(n){
