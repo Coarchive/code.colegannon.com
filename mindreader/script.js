@@ -5,6 +5,9 @@ TODO:
 + Battery - Done
 + Stats of website
 + OS - DOne
++ Geolocation
++ Notifications
++ Push?
 */
 var battery = {};
 navigator.getBattery().then(function (batteryManager) {
@@ -77,3 +80,10 @@ var theScreen = {
 var permissions = {};
 
 navigator.permissions;
+/*
+Permissions:
++ geolocation
++ notifications
++ push
++ midi
+*/
