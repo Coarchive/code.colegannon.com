@@ -208,8 +208,13 @@ function rikd(){
 	}
 	return konami;
 };
-setTimeout(function(){new Konami(rikd)},3000)
-var tin = setInterval('')
+onload=function(){new Konami(rikd)}
+function trueReset(){
+  	var r = ['rt','dogRolled','dogtrolld','devTools','devTold']
+	for(i in r){
+	localStorage.removeItem(r[i])
+	}
+}
 </script>
     <img id='foo'></img>
     <div id='sans'></div>
