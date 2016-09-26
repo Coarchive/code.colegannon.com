@@ -26,15 +26,15 @@ background-color:white;
 <body>
 <script>
 //Localstorage thing
-setInterval(function(){document.title='Scrub'},900);
-setInterval(function(){document.title='Rekt'},700);
-setInterval(function(){document.title='Get'},500);
+setInterval(function(){document.title='Scrub'},500);
+setTimeout(function(){setInterval(function(){document.title='Rekt'},500)},500);
+setTimeout(function(){setInterval(function(){document.title='Get'},500)},1000);
 var timesHere = Number(localStorage.getItem('dogRolled'));
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
 var element=new Image;Object.defineProperty(element,"id",{get:function(){
 	document.body.style.backgroundColor='black';
-	imga.src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+	document.getElementById('foo').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
 	nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';
 }});console.log("%cHello",element);
 function grn(n){
