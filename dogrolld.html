@@ -29,7 +29,10 @@ background-color:white;
 var timesHere = Number(localStorage.getItem('dogRolled'));
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
-var element=new Image;Object.defineProperty(element,"id",{get:function(){nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}});console.log("%cHello",element);
+var element=new Image;Object.defineProperty(element,"id",{get:function(){
+	body.style.backgroundColor='black';
+	imga.src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+	nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}});console.log("%cHello",element);
 function grn(n){
     return Math.floor((Math.random() * n) + 1);
 }
@@ -40,7 +43,7 @@ if(grn(10)<4){history.pushState({},'','');
 if(y&&grn(5)<3){history.pushState({},'','dogtrolld');}
 onload=function wipe(){
     setTimeout(function(){
-var imga=document.getElementById('foo');
+var imga = document.getElementById('foo');
 var nope = document.createElement('audio');
 nope.autoplay=true;
 nope.loop=true
