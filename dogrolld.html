@@ -105,16 +105,19 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
 	setTimeout(function(){s.innerHTML='You mess with the dev tools, you mess with me.'},6000)
 	setTimeout(function(){s.innerHTML='Capiche?'},7500);
 	localStorage.setItem('devTold','true');
-	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html'},8400)
+}else if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){
+    localStorage.setItem('rt','true');
+    history.pushState({},'','dogtrolld');
+    document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
+    setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400);
+    setTimeout(function(){location='dogtrolld'},5300);
 }
-if(timesHere>2)    if(timesHere>10){
+if(timesHere>10){
     localStorage.removeItem('dogRolled');
-    document.getElementById('sans').innerHTML="nope.";
-    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','dogtrolld'); document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
-    setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400)}
-    setTimeout(function(){location.reload()},5600)
-}else{document.getElementById('sans').innerHTML=String(timesHere)}
-document.body.appendChild(nope);},200)
+    document.getElementById('sans').innerHTML="Okay. Now ten was fine but eleven is just excessive.";
+    setTimeout(function(){s.innerHTML='Do you really think I can count that high?'},3400);
+    setTimeout(function(){location.reload()},5000);
+
 }
 function rikd(){
     location='dogtrolld';
