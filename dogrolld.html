@@ -35,8 +35,8 @@ SCREW CSS AND CENTERING! HERE'S AN UNCENTERED THING FOR YOU!
 -->  
 <script>
 //Localstorage thing
-setInterval(function(){document.title='Rekt'},500)
-setTimeout(function(){setInterval(function(){document.title='Get'},500)},5000);
+var t=0
+setInterval(function(){if(t){document.title='Rekt';t=0}else{document.title='Get't=1;}},500)
 var timesHere = Number(localStorage.getItem('dogRolled'));
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
@@ -93,6 +93,9 @@ imga.src='resources/Sans.png';
 nope.src='resources/sans.ogg';
 nope.volume=0.7;
 }
+if(timesHere==8&&){
+
+}
 if(timesHere>2)    if(timesHere>10){
     localStorage.removeItem('dogRolled');
     document.getElementById('sans').innerHTML="nope.";
@@ -107,7 +110,6 @@ function rikd(){
 }
             //NOT MINE I TOOK IT FROM ANOTHER SITE
             //Just look up konami.js, you'll find it.
-	    // From: http://code.snaptortoise.com/konami-js//
             var Konami = function (callback) {
 	var konami = {
 		addEvent: function (obj, type, fn, ref_obj) {
