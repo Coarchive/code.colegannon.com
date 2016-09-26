@@ -37,7 +37,9 @@ SCREW CSS AND CENTERING! HERE'S AN UNCENTERED THING FOR YOU!
 //Localstorage thing
 var t=0
 setInterval(function(){if(t){document.title='Rekt';t=0;}else{document.title='Get';t=1;}},500)
-var timesHere = Number(localStorage.getItem('dogRolled'));
+var timesHere
+if(!localStorage.getItem('dogRolled')){timesHere=1;}else{
+timesHere = Number(localStorage.getItem('dogRolled'))};
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
 var element=new Image;Object.defineProperty(element,"id",{get:function(){
