@@ -66,7 +66,7 @@ var theScreen = {
     }
   },
   canTurnOff: function () {
-    return typeof (screen.enabled || screen.mozEnabled || screen.webkitEnabled) !== 'undefined');
+    return typeof (screen.enabled || screen.mozEnabled || screen.webkitEnabled) !== 'undefined';
   },
   depth: {
     pixel: screen.pixelDepth,
@@ -75,3 +75,5 @@ var theScreen = {
 };
 
 var permissions = {};
+
+navigator.permissions;
