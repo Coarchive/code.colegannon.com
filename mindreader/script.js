@@ -7,7 +7,6 @@ TODO:
 + OS - DOne
 + Geolocation
 + Notifications
-+ Push?
 */
 var battery = {};
 navigator.getBattery().then(function (batteryManager) {
