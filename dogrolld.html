@@ -56,6 +56,7 @@ if(grn(10)<4){history.pushState({},'','');
 	     }
 if(y&&grn(5)<3){history.pushState({},'','dogtrolld');}
 onload=function wipe(){
+    new Konami(rikd)
     setTimeout(function(){
 var imga = document.getElementById('foo');
 var nope = document.createElement('audio');
@@ -208,7 +209,6 @@ function rikd(){
 	}
 	return konami;
 };
-onload=function(){new Konami(rikd)}
 function trueReset(){
   	var r = ['rt','dogRolled','dogtrolld','devTools','devTold']
 	for(i in r){
