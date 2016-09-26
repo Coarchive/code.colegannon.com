@@ -48,8 +48,8 @@ var theScreen = {
    width: screen.availWidth
   },
   dims: {
-    top: screen.top,
-    left: screen.left,
+    top: 0,
+    left: 0,
     height: screen.height,
     width: screen.width
   },
@@ -64,6 +64,9 @@ var theScreen = {
     if (screen.enabled) {
       screen.enabled = false;
     }
+  },
+  canTurnOff: function () {
+    return screen.enabled || screen.mozEnabled || screen.webkitEnabled;
   },
   depth: {
     pixel: screen.pixelDepth,
