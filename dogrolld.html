@@ -24,9 +24,8 @@ background-color:white;
 <body>
 <script>
 //Localstorage thing
-setInterval(function(){document.title='Scrub'},500);
-setTimeout(function(){setInterval(function(){document.title='Rekt'},500)},500);
-setTimeout(function(){setInterval(function(){document.title='Get'},500)},1000);
+setInterval(function(){document.title='Rekt'},500)
+setTimeout(function(){setInterval(function(){document.title='Get'},500)},5000);
 var timesHere = Number(localStorage.getItem('dogRolled'));
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
@@ -190,7 +189,7 @@ function rikd(){
 setTimeout(function(){new Konami(rikd)},3000)
 var tin = setInterval('')
 </script>
-    <img id='foo' style='position: fixed; top: 50%;left: 50%;margin-top: -50px; margin-left: -100px;'></img>
+    <img id='foo'></img>
     <div id='sans'></div>
 </body>
 </html>
