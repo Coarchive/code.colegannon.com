@@ -39,3 +39,34 @@ navigator.getBattery().then(function (batteryManager) {
 });
 
 var os = navigator.userAgent.slice(navigator.userAgent.indexOf('(')+1, navigator.userAgent.indexOf(')'));
+
+var theScreen = {
+  avail: {
+   top: screen.availTop,
+   left: screen.availLeft,
+   height: screen.availHeight,
+   width: screen.availWidth
+  },
+  dims: {
+    top: screen.top,
+    left: screen.left,
+    height: screen.height,
+    width: screen.width
+  },
+  orient: screen.orientation,
+  turnOff: function () {
+    if (screen.mozEnabled) {
+      screen.mozEnabled = false;
+    }
+    if (screen.webkitEnabled) {
+      screen.webkitEnabled = false;
+    }
+    if (screen.enabled) {
+      screen.enabled = false;
+    }
+  },
+  depth: {
+    pixel: screen.pixelDepth,
+    color: screen.colorDepth
+  }
+};
