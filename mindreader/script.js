@@ -2,8 +2,9 @@
 TODO:
 + Permissons
 + Screen Stuff
-+ Battery -
++ Battery - Done
 + Stats of website
++ OS - DOne
 */
 var battery;
 navigator.getBattery().then(function (batteryManager) {
