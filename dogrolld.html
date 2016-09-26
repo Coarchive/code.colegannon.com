@@ -37,7 +37,7 @@ localStorage.setItem('dogRolled',timesHere+1);
 var element=new Image;Object.defineProperty(element,"id",{get:function(){
 	document.body.style.backgroundColor='black';
 	document.getElementById('foo').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
-	nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';
+	if(nope.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
 	document.getElementById('sans').hidden=true;
 }});console.log("%cHello",element);
 function grn(n){
