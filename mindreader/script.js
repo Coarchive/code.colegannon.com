@@ -7,6 +7,14 @@ TODO:
 + OS - DOne
 + Geolocation
 + Notifications
++ Online
++ Type of connection
++ Language
++ Platform
++ Cookies
++ Do not track
++ Vendor
++ Plugins
 */
 var battery = {};
 navigator.getBattery().then(function (batteryManager) {
