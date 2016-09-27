@@ -124,8 +124,13 @@ if(timesHere==11){
 }else{document.getElementById('text').innerHTML=String(timesHere);}
 document.body.appendChild(audioElement);},200);
 };
+if(timesHere>11){
+			imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
+			audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';		
+			document.body.style.backgroundColor='black';
+		}
 //Sans scolds you about dev tools
-if(timesHere>7&&localStorage.getItem('devTools')){
+if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 	var s;
 	onload = function(){
 		s = document.getElementById('text');
@@ -138,13 +143,6 @@ if(timesHere>7&&localStorage.getItem('devTools')){
 		imageElement.src='resources/Sans.png';
 		s.innerHTML="Hey kid.";
 		document.title='A warning...';
-		if(timesHere>11){
-			setTimeout(function(){
-			imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
-			audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';		
-			document.body.style.backgroundColor='black';
-			},5000);
-		} else if (!localStorage.getItem('devTold')) {
   // % T H I S  D O E S N T  A L W A Y S  W O R K? %
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
 	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},10000);
@@ -162,10 +160,6 @@ if(timesHere>7&&localStorage.getItem('devTools')){
 			iframe.height = window.innerHeight;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
 	},30000);
-		} else {
-			setTimeout(function(){s.innerHTML='How about you reload again?';},5000);
-			setTimeout(function(){location.reload();},10000);
-		}
     };
 }
 // K O N A M I  C O D E
