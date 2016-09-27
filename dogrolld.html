@@ -126,9 +126,11 @@ document.body.appendChild(audioElement);},200);
 };
 //Sans scolds you about dev tools
 if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
-	var s = document.getElementById('text');
-	s.innerHTML="Hey kid.";
-	document.title='A warning...';
+	addEventListener('load', function(){
+		var s = document.getElementById('text');
+		s.innerHTML="Hey kid.";
+		document.title='A warning...';
+	});
   // % T H I S  D O E S N T  A L W A Y S  W O R K? %
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
 	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},10000);
