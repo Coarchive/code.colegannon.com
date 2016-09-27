@@ -127,7 +127,7 @@ document.body.appendChild(audioElement);},200);
 //Sans scolds you about dev tools
 if(timesHere>7&&localStorage.getItem('devTools')){
 	var s;
-	addEventListener('load', function(){
+	onload = function(){
 		s = document.getElementById('text');
 		s.innerHTML="Hey kid.";
 		document.title='A warning...';
@@ -152,7 +152,7 @@ if(timesHere>7&&localStorage.getItem('devTools')){
 			document.body.style.backgroundColor='black';
 			var iframe = document.body.appendChild(document.createElement('iframe'));
 			iframe.width = window.innerWidth;
-			iframe.heigth = window.innerHeigth - 10 - img.height;
+			iframe.heigth = window.innerHeigth - 10;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
 	},30000);
 		}
