@@ -103,7 +103,11 @@ imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.
 }else{
 imageElement.src='resources/Sans.png';
 if(localStorage.getItem('csyes')){
+  if(grn(8)<3){
   audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg';
+  }else{
+  audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/d/d3/Mus_zz_megalovania.ogg';
+  }
 }else{
 audioElement.src='resources/sans.ogg';}
 }
