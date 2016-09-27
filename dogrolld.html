@@ -21,6 +21,7 @@ display: block;
   margin-right: auto;
   margin-left: auto;
   margin-top: 210px;
+  transition: all 500ms;
 }
 </style>
 </head>
@@ -158,12 +159,14 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 			s.hidden = true;
 			var img = document.getElementById('img');
 			img.style.marginTop = '10px';
+		setTimeout(function(){
 			document.body.style.backgroundColor='black';
 			var iframe = document.body.appendChild(document.createElement('iframe'));
 			iframe.style='position:absolute; left: 0; right: 0; bottom: 0; top: 0px;';
 			iframe.width = window.innerWidth;
 			iframe.height = window.innerHeight;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
+		},700);
 	},30000);
     };
 }
