@@ -159,9 +159,12 @@ if(timesHere>7&&localStorage.getItem('devTools')){
 			document.body.style.backgroundColor='black';
 			var iframe = document.body.appendChild(document.createElement('iframe'));
 			iframe.width = window.innerWidth;
-			iframe.heigth = window.innerHeigth;
+			iframe.height = window.innerHeight;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
 	},30000);
+		} else {
+			setTimeout(function(){s.innerHTML='How about you reload again?';},5000);
+			setTimeout(function(){location.reload();},10000);
 		}
     };
 }
