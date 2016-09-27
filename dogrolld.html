@@ -4,79 +4,89 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 <style>
 body{
-background-color:white;
-                font-family: 'Montserrat', sans-serif;
-                margin: 0; padding: 0; height: 100%; overflow: hidden;
+  background-color:white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
-      #sans
-            {
-                font-size: 60px;
-		margin-top: 70px;
-		text-align: center;
-            }
-    #foo{
+#text{
+  font-size: 60px;
+	margin-top: 70px;
+	text-align: center;
+}
+#img{
 	display: block;
-    	margin-right: auto;
+  margin-right: auto;
 	margin-left: auto;
 	margin-top: 210px;
-	}
-
+}
 </style>
 </head>
 <body>
-<!--
-IT WAS A PAIN IN THE ASS TO CENTER THIS DAMN THING SO YOU BETTER ENJOY THE CENTERED IMAGES!
-SCREW CSS AND CENTERING! HERE'S AN UNCENTERED THING FOR YOU!
--------------------------------------Thing-------------------------------------------------
--->
 <script>
-//Localstorage thing
+// T I T L E
 var t=0
 setInterval(function(){if(t){document.title='Rekt';t=0;}else{document.title='Get';t=1;}},500)
+
+// V I S I T  C O U N T E R
 var timesHere
 if(!localStorage.getItem('dogRolled')){timesHere=1;}else{
 timesHere = Number(localStorage.getItem('dogRolled'))};
 localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
+
+// D E V E L O P E R  T O O L S  L I S T E N E R
 var element=new Image;Object.defineProperty(element,"id",{get:function(){
+  //S-Exe
 	document.body.style.backgroundColor='black';
-	document.getElementById('foo').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
-	if(nope.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){nope.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
-	document.getElementById('sans').hidden=true;
+	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+	if(audioElement.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
+	document.getElementById('text').hidden=true;
 	localStorage.setItem('devTools','true');
+  //E-Exe
 }});console.log("%cHello",element);
-function grn(n){
+
+// R A N D O M  S T U F F
+function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
 }
-var y;
-if(grn(10)<4){history.pushState({},'','');
-	      y=1;
-	     }
-if(y&&grn(5)<3){history.pushState({},'','dogtrolld');}
-onload=function wipe(){
-    new Konami(rikd)
+if(y&&getRandomNumber(5)<3){history.pushState({},'','dogtrolld');}
+function trueReset(){
+  	var r = ['rt','dogRolled','dogtrolld','devTools','devTold']
+	for(i in r){
+	localStorage.removeItem(r[i])
+	}
+}
+
+// S C R I P T
+onload=function(){
+    //Konami Code
+    new Konami(function(){location='dogtrolld';})
+
     setTimeout(function(){
-var imga = document.getElementById('foo');
-var nope = document.createElement('audio');
-nope.autoplay=true;
-nope.loop=true
-nope.id='nope';
+var imageElement = document.getElementById('img');
+var audioElement = document.createElement('audio');
+audioElement.autoplay=true;
+audioElement.loop=true
+audioElement.id='audioElement';
 if(timesHere<7){
-switch(grn(6)){
+switch(getRandomNumber(6)){
     case 1:
         console.log(1)
-        nope.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
-                nope.volume=0.6;
+        audioElement.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg'
+                audioElement.volume=0.6;
     break;
     case 2:
         console.log(2)
-        nope.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
-                nope.volume=0.4;
+        audioElement.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg"
+                audioElement.volume=0.4;
     break
     case 3:
         console.log(3)
-        nope.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
-        nope.volume=0.6;
+        audioElement.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg"
+        audioElement.volume=0.6;
     break;
     case 4:
         console.log(4)
@@ -84,17 +94,17 @@ switch(grn(6)){
         console.log(5)
     case 6:
         console.log(6)
-        nope.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
-        nope.playbackRate=Math.random()+0.6;
+        audioElement.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg'
+        audioElement.playbackRate=Math.random()+0.6;
 }
-imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
+imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif'
 }else{
-imga.src='resources/Sans.png';
-nope.src='resources/sans.ogg';
-nope.volume=0.7;
+imageElement.src='resources/Sans.png';
+audioElement.src='resources/sans.ogg';
+audioElement.volume=0.7;
 }
 if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
-	var s = document.getElementById('sans')
+	var s = document.getElementById('text')
 	s.innerHTML="Hey kid."
 	document.title='A warning...'
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .'},3000)
@@ -103,21 +113,18 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
 	localStorage.setItem('devTold','true');
 	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html'},8400)
 }
-if(timesHere>2)    if(timesHere>10){
+if(timesHere>10){
     localStorage.removeItem('dogRolled');
-    document.getElementById('sans').innerHTML="nope.";
-    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','dogtrolld'); document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
-    setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!"},4400)}
+    document.getElementById('text').innerHTML="audioElement.";
+    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
+    setTimeout(function(){document.getElementById('text').innerHTML="Here's to another one!"},4400)}
     setTimeout(function(){location.reload()},5600)
-}else{document.getElementById('sans').innerHTML=String(timesHere)}
-document.body.appendChild(nope);},200)
+}else{document.getElementById('text').innerHTML=String(timesHere)}
+document.body.appendChild(audioElement);},200)
 }
-function rikd(){
-    location='dogtrolld';
-}
-            //NOT MINE I TOOK IT FROM ANOTHER SITE
-            //Just look up konami.js, you'll find it.
-            var Konami = function (callback) {
+
+// K O N A M I  C O D E
+var Konami = function (callback) {
 	var konami = {
 		addEvent: function (obj, type, fn, ref_obj) {
 			if (obj.addEventListener)
@@ -207,14 +214,8 @@ function rikd(){
 	}
 	return konami;
 };
-function trueReset(){
-  	var r = ['rt','dogRolled','dogtrolld','devTools','devTold']
-	for(i in r){
-	localStorage.removeItem(r[i])
-	}
-}
 </script>
-    <img id='foo'></img>
-    <div id='sans'></div>
+    <img id='img'></img>
+    <div id='text'></div>
 </body>
 </html>
