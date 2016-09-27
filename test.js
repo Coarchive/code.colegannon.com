@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-<style>
-body{
-  background-color:white;
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-#text{
-  font-size: 60px;
-	margin-top: 70px;
-	text-align: center;
-}
-#img{
-	display: block;
-  margin-right: auto;
-	margin-left: auto;
-	margin-top: 210px;
-}
-</style>
-</head>
-<body>
-<script>
 // T I T L E
 var t=0;
 setInterval(function(){if(t){document.title='Rekt';t=0;}else{document.title='Get';t=1;}},500);
@@ -214,8 +186,3 @@ var Konami = function (callback) {
 	}
 	return konami;
 };
-</script>
-    <img id='img'></img>
-    <div id='text'></div>
-</body>
-</html>
