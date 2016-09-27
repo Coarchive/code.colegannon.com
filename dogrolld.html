@@ -133,6 +133,11 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
 		iframe.width=window.innerWidth;
 		iframe.height=window.innerHeight;
 		iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
+		if(timesHere>11){
+imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
+audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/f/fc/Mus_xpart_b.ogg';		
+document.body.style.backgroundColor='black';
+}
 	},30000);
 }
 if(timesHere==11){
@@ -146,10 +151,6 @@ if(timesHere==11){
 }else{document.getElementById('text').innerHTML=String(timesHere);}
 document.body.appendChild(audioElement);},200);
 };
-if(timesHere>11){
-document.getElementById('img').src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
-document.body.style.backgroundColor='black';
-}
 
 // K O N A M I  C O D E
 var Konami = function (callback) {
