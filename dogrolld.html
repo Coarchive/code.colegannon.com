@@ -112,6 +112,18 @@ if(localStorage.getItem('csyes')&&timesHere!=11){
 audioElement.src='resources/sans.ogg';}
 }
 audioElement.volume=0.7;
+//Reset
+if(timesHere==11){
+    localStorage.removeItem('dogRolled');
+    document.getElementById('text').innerHTML="nope.";
+    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true');
+    history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
+    setTimeout(function(){document.getElementById('text').innerHTML="Here's to another one!";},4400);}else{
+    }
+    setTimeout(function(){location.reload();},5600);
+}else{document.getElementById('text').innerHTML=String(timesHere);}
+document.body.appendChild(audioElement);},200);
+};
 //Sans scolds you about dev tools
 if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 	var s = document.getElementById('text');
@@ -128,30 +140,17 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
 		var img = document.getElementById('img');
 		img.style.marginTop = "10px";
 		s.hidden=true;
-		document.body.style.backgroundColor = 'black';
+		document.style.backgroundColor = 'black';
 		var iframe = document.body.appendChild(document.createElement('iframe'));
 		iframe.width=window.innerWidth;
 		iframe.height=window.innerHeight;
-		iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
-		if(timesHere>11){
+		iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';}
+	if(timesHere>11){
 imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
 audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/f/fc/Mus_xpart_b.ogg';		
 document.body.style.backgroundColor='black';
-}
 	},30000);
 }
-if(timesHere==11){
-    localStorage.removeItem('dogRolled');
-    document.getElementById('text').innerHTML="nope.";
-    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true');
-    history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
-    setTimeout(function(){document.getElementById('text').innerHTML="Here's to another one!";},4400);}else{
-    }
-    setTimeout(function(){location.reload();},5600);
-}else{document.getElementById('text').innerHTML=String(timesHere);}
-document.body.appendChild(audioElement);},200);
-};
-
 // K O N A M I  C O D E
 var Konami = function (callback) {
 	var konami = {
