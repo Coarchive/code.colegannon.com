@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+<style>
+body{
+  background-color:white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+#text{
+  font-size: 60px;
+  margin-top: 70px;
+  text-align: center;
+}
+#img{
+display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 210px;
+  transition: all 500ms;
+}
+</style>
+</head>
+<body>
+<img id='img'>
+<div id='text'></div>
+<audio id='audio' autoplay loop></audio>
+<script>
+// V A R I A B L E S
+var timesVisited,
+    currentTitle,
+    imageElement = document.getElementById('img'),
+    audioElement = document.getElementById('audio');
+// F U N C T I O N S
+function getRandomNumber(n){
+    return Math.floor((Math.random() * n) + 1);
+}
+
+// C A S E S
+var danceOfDog = {
+    music:function(){},
+    background:""
+}
+</script>
+</body>
+</html>

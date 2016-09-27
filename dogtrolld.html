@@ -1,12 +1,9 @@
 <html>
 <body>
     <script>
-    onload=function(){open('dogtrolld.html')
-                      location='//rick.amigocraft.net';
-        setInterval(function(){var stateObj = { foo: "dogroll" };
-    history.pushState(stateObj, "arcanehood", "dogrolld.html");},100)
-                     }
+    history.pushState({}, "", "dogrolld")
     localStorage.setItem('dogtrolld','true');
+    location='//rick.amigocraft.net';
     </script>
     </body>
 </html>

@@ -4,9 +4,19 @@ TODO:
 + Screen Stuff
 + Battery - Done
 + Stats of website
-+ os - Done
++ OS - DOne
++ Geolocation
++ Notifications
++ Online
++ Type of connection
++ Language
++ Platform
++ Cookies
++ Do not track
++ Vendor
++ Plugins
 */
-var battery;
+var battery = {};
 navigator.getBattery().then(function (batteryManager) {
   battery.charging = batteryManager.charging;
   battery.percent = batteryManager.level * 100;
@@ -39,3 +49,48 @@ navigator.getBattery().then(function (batteryManager) {
 });
 
 var os = navigator.userAgent.slice(navigator.userAgent.indexOf('(')+1, navigator.userAgent.indexOf(')'));
+
+var theScreen = {
+  avail: {
+   top: screen.availTop,
+   left: screen.availLeft,
+   height: screen.availHeight,
+   width: screen.availWidth
+  },
+  dims: {
+    top: 0,
+    left: 0,
+    height: screen.height,
+    width: screen.width
+  },
+  orient: screen.orientation,
+  turnOff: function () {
+    if (screen.mozEnabled) {
+      screen.mozEnabled = false;
+    }
+    if (screen.webkitEnabled) {
+      screen.webkitEnabled = false;
+    }
+    if (screen.enabled) {
+      screen.enabled = false;
+    }
+  },
+  canTurnOff: function () {
+    return typeof (screen.enabled || screen.mozEnabled || screen.webkitEnabled) !== 'undefined';
+  },
+  depth: {
+    pixel: screen.pixelDepth,
+    color: screen.colorDepth
+  }
+};
+
+var permissions = {};
+
+navigator.permissions;
+/*
+Permissions:
++ geolocation
++ notifications
++ push
++ midi
+*/
