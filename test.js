@@ -16,7 +16,7 @@ function getRandomNumber(n){
 // S T A T E
 var danceOfDog = {
     music:function(){
-			switch(getRandomNumber(6)){
+			switch(getRandomNumber(9)){
 			    case 1:
 			        audioElement.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg';
 			        audioElement.volume=0.6;
@@ -32,6 +32,9 @@ var danceOfDog = {
 			    case 4:
 			    case 5:
 			    case 6:
+					case 7:
+					case 8:
+					case 9:
 			        audioElement.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg';
 			        audioElement.playbackRate=Math.random()+0.6;
 			}
@@ -45,7 +48,7 @@ var Sans = {
 		if(!localStorage.getItem('sansSpecial')){
 			audioElement.src='/resources/sans.ogg';
 		}else{
-
+			getRandomNumber(7)==2?audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/d/d3/Mus_zz_megalovania.ogg':audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg';
 		}
 	},
 	image:function(){
