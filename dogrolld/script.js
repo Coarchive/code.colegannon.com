@@ -85,14 +85,15 @@ onload=function(){
 	      setTimeout(function(){s.innerHTML='You mess with the dev tools, you mess with me.';},6000);
 	      setTimeout(function(){s.innerHTML='Capiche?';},7500);
 	      localStorage.setItem('devTold','true');
-      }else if(localStorage.getItem('dogrolled')&&!localStorage.getItem('rt')){
+      }else if (localStorage.getItem('rt')&&localStorage.getItem('dogrolld')) {
         localStorage.setItem('rt','true');
         history.pushState({},'','dogtrolld');
-        document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
+        document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got rickd!";
         setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!";},4400);
         setTimeout(function(){location='dogtrolld';},5300);
       }
     }
+
 
       //<End Special Sans>//
       //<Start Counting Reset>//
