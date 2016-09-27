@@ -18,25 +18,25 @@ var danceOfDog = {
     music:function(){
 			switch(getRandomNumber(6)){
 			    case 1:
-			        audioElement.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg';
+			        audioElement.src='/resources/DOD.ogg';
 			        audioElement.volume=0.6;
 			    break;
 			    case 2:
-			        audioElement.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg";
+			        audioElement.src="/resources/0.5.ogg";
 			        audioElement.volume=0.6;
 			    break;
 			    case 3:
-			        audioElement.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg";
+			        audioElement.src="/resources/1.ogg";
 			        audioElement.volume=0.6;
 			    break;
 			    case 4:
 			    case 5:
 			    case 6:
-			        audioElement.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg';
+			        audioElement.src='/resources/Dogsong.ogg';
 			        audioElement.playbackRate=Math.random()+0.6;
 			}
 		},
-    image:function(){imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';},
+    image:function(){imageElement.src='/resources/SmallAdog.ogg';},
 	  txt:function(){setText(timesHere);},
 		plugin:function(){},
 };
