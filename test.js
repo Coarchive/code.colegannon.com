@@ -48,7 +48,11 @@ var Sans = {
 		if(!localStorage.getItem('sansSpecial')){
 			audioElement.src='/resources/sans.ogg';
 		}else{
-			getRandomNumber(7)==2?audioElement.src='/resources/megalovania.ogg':audioElement.src='/resources/SongThatMightPlayWhenYouFightSans.ogg';
+			if (getRandomNumber(7)==2) {
+        audioElement.src='/resources/megalovania.ogg';
+      } else {
+        audioElement.src='/resources/SongThatMightPlayWhenYouFightSans.ogg';
+      }
 		}
 	},
 	image:function(){
