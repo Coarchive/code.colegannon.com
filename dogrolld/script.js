@@ -68,8 +68,8 @@ onload=function(){
       }/*Close Switch*/
       imga.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';
       }else{
-        imga.src='resources/Sans.png';
-        nope.src='resources/sans.ogg';
+        imga.src='Sans.png';
+        nope.src='sans.ogg';
         nope.volume=0.7;
       }
 };
