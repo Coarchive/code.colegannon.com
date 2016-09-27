@@ -27,10 +27,11 @@ display: block;
 </head>
 <body>
 <img id='img'>
-    <div id='text'></div>
+<div id='text'></div>
+<audio id='audioElement'></audio>
 <script>
 var imageElement = document.getElementById('img');
-		var audioElement = document.createElement('audio');
+var audioElement = document.getElementById('audioElement');
 // T I T L E
 var t=0;
 setInterval(function(){if(t){document.title='Rekt';t=0;}else{document.title='Get';t=1;}},500);
@@ -73,9 +74,7 @@ onload=function(){
         new Konami(function(){localStorage.setItem('csyes','true');});
     }
     setTimeout(function(){
-audioElement.autoplay=true;
-audioElement.loop=true;
-audioElement.id='audioElement';
+	audioElement.loop=true;
 if(timesHere<7){
 switch(getRandomNumber(6)){
     case 1:
@@ -125,7 +124,7 @@ if(timesHere==11){
     }
     setTimeout(function(){location.reload();},5600);
 }else{document.getElementById('text').innerHTML=String(timesHere);}
-document.body.appendChild(audioElement);},200);
+audioElement.play();},200);
 };
 if(timesHere>11){
 	onload = function(){
