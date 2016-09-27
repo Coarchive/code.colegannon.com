@@ -102,7 +102,7 @@ switch(getRandomNumber(6)){
 imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';
 }else{
 imageElement.src='resources/Sans.png';
-if(localStorage.getItem('csyes')){
+if(localStorage.getItem('csyes')&&timesHere!=11){
   if(getRandomNumber(8)>4){
   audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg';
   }else{
