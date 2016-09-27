@@ -124,7 +124,7 @@ if(timesHere==11){
     setTimeout(function(){location.reload();},5600);
 }else{document.getElementById('text').innerHTML=String(timesHere);}
 audioElement.play();},200);
-};
+
 if(timesHere>11){
 	var imageElement = document.getElementById('img');
 	var audioElement = document.createElement('audio');
@@ -166,6 +166,7 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 		},700);
 	},45000);
 }
+};
 // K O N A M I  C O D E
 var Konami = function (callback) {
 	var konami = {
