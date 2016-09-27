@@ -1,9 +1,14 @@
 <html>
 <body>
     <script>
-    history.pushState({}, "", "dogrolld")
+    if(!localStorage.getItem('ricked')){
+    localStorage.setItem('ricked','true');
     localStorage.setItem('dogtrolld','true');
     location='//rick.amigocraft.net';
+    }else{
+        localStorage.removeItem('ricked');
+        location='dogrolld';
+    }
     </script>
     </body>
 </html>
