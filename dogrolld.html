@@ -54,7 +54,7 @@ if(grn(10)<4){history.pushState({},'','');
 	     }
 if(y&&grn(5)<3){history.pushState({},'','dogtrolld');}
 onload=function wipe(){
-    new Konami(rikd)
+    setTimeout(function(){new Konami(rikd)},3000);
     setTimeout(function(){
 var imga = document.getElementById('foo');
 var nope = document.createElement('audio');
@@ -213,13 +213,8 @@ function trueReset(){
   	var r = ['rt','dogRolled','dogtrolld','devTools','devTold']
 	for(i in r){
 	localStorage.removeItem(r[i])
-	}
-<<<<<<< HEAD
-}
+	}}
 },200)}
-=======
-}},200)}
->>>>>>> origin/master
 </script>
     <img id='foo'></img>
     <div id='sans'></div>
