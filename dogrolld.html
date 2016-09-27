@@ -44,7 +44,7 @@ localStorage.removeItem('dogRolled');
 localStorage.setItem('dogRolled',timesHere+1);
 
 // D E V E L O P E R  T O O L S  L I S T E N E R
-var element=new Image;Object.defineProperty(element,"id",{get:function(){
+/*var element=new Image;Object.defineProperty(element,"id",{get:function(){
   //S-Exe
 	document.body.style.backgroundColor='black';
 	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
@@ -54,7 +54,7 @@ var element=new Image;Object.defineProperty(element,"id",{get:function(){
 	localStorage.setItem('devTools','true');
   //E-Exe
 }});console.log("%cHello",element);
-
+*/
 // R A N D O M  S T U F F
 function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
@@ -130,7 +130,7 @@ if(timesHere>11){
 		var imageElement = document.getElementById('img');
 		var audioElement = document.createElement('audio');
 		imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
-		audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';		
+		audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';
 		document.body.style.backgroundColor='black';
 	}
 		}
@@ -152,7 +152,7 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
   	setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},18000);
   	setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},23000);
-	setTimeout(function(){s.innerHTML='Select normal when you are ready.'; 
+	setTimeout(function(){s.innerHTML='Select normal when you are ready.';
 	localStorage.setItem('devTold','true');},38000);
 	setTimeout(function(){
 			s.hidden = true;
