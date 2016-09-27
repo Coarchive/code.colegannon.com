@@ -76,22 +76,24 @@ onload=function(){
       //---------- End dog or sans ----------//
     //------------ onload function scope ----------//
     //<Start Special Sans>//
-    if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold'));{
-	     var s = document.getElementById('sans');
+    if(timesHere>7&&timesHere<11);{
+      if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
+	      var s = document.getElementById('sans');
 	      s.innerHTML="Hey kid.";
 	      document.title='A warning...';
 	      setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},3000);
 	      setTimeout(function(){s.innerHTML='You mess with the dev tools, you mess with me.';},6000);
 	      setTimeout(function(){s.innerHTML='Capiche?';},7500);
 	      localStorage.setItem('devTold','true');
-      }else if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt'))
-      {
+      }else if(localStorage.getItem('dogrolled')&&!localStorage.getItem('rt')){
         localStorage.setItem('rt','true');
         history.pushState({},'','dogtrolld');
         document.getElementById('sans').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
         setTimeout(function(){document.getElementById('sans').innerHTML="Here's to another one!";},4400);
         setTimeout(function(){location='dogtrolld';},5300);
       }
+    }
+
       //<End Special Sans>//
       //<Start Counting Reset>//
 if(timesHere>10){
