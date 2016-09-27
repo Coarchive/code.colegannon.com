@@ -124,7 +124,15 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
   setTimeout(function(){s.innerHTML='Watch, I can redirect you. Can you defeat me?';},20000);
   setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},25000);
 	localStorage.setItem('devTold','true');
-	setTimeout(function(){document.getElementById('img').hidden=true;s.hidden=true;var iframe = document.body.appendChild(document.createElement('iframe'));iframe.width=window.innerWidth;iframe.height=window.innerHeight;iframe.src='https://jcw87.github.io/c2-sans-fight/index.html'},30000);
+	setTimeout(function(){
+		document.getElementById('img').hidden=true;
+		document.getElementById('audioElement').pause();
+		s.hidden=true;
+		var iframe = document.body.appendChild(document.createElement('iframe'));
+		iframe.width=window.innerWidth;
+		iframe.height=window.innerHeight;
+		iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
+	},30000);
 }
 if(timesHere>10){
     localStorage.removeItem('dogRolled');
