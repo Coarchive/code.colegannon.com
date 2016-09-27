@@ -113,13 +113,13 @@ if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.ge
 	var s = document.getElementById('text');
 	s.innerHTML="Hey kid.";
 	document.title='A warning...';
-	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},3000);
-	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},5300);
-	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},8000);
-  setTimeout(function(){s.innerHTML='Watch, I can redirect you. Can you defeat me?';},9900);
-  setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},11500);
+	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
+	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},10000);
+	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
+  setTimeout(function(){s.innerHTML='Watch, I can redirect you. Can you defeat me?';},20000);
+  setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},25000);
 	localStorage.setItem('devTold','true');
-	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html';},12000);
+	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html';},30000);
 }
 if(timesHere>10){
     localStorage.removeItem('dogRolled');
