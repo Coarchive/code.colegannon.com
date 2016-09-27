@@ -126,14 +126,14 @@ if(timesHere==11){
 audioElement.play();},200);
 };
 if(timesHere>11){
-	onload = function(){
+	document.addEventListener('load',function(){
 		var imageElement = document.getElementById('img');
 		var audioElement = document.createElement('audio');
 		imageElement.src='http://vignette3.wikia.nocookie.net/undertale/images/c/c3/Asriel_Dreemur_Transformed.gif';
 		audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';
 		document.body.style.backgroundColor='black';
-	}
-		}
+	});
+}
 //Sans scolds you about dev tools
 if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 	var s;
