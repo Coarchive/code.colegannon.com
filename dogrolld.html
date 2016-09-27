@@ -53,7 +53,7 @@ var element=new Image;Object.defineProperty(element,"id",{get:function(){
 function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
 }
-if(getRandomNumber(5)<3){history.pushState({},'','dogtrolld');}
+if(getRandomNumber(5)===1){history.pushState({},'','dogtrolld');}
 function trueReset(){
   	var r = ['csyes','cs','rt','dogRolled','dogtrolld','devTools','devTold'];
 	for(i in r){
@@ -108,11 +108,12 @@ if(localStorage.getItem('csyes')){
 audioElement.src='resources/sans.ogg';}
 }
 audioElement.volume=0.7;
-//Sans
+//Sans scolds you about dev tools
 if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 	var s = document.getElementById('text');
 	s.innerHTML="Hey kid.";
 	document.title='A warning...';
+  // % T H I S  D O E S N T  A L W A Y S  W O R K? %
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
 	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},10000);
 	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
