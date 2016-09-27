@@ -44,6 +44,7 @@ var element=new Image;Object.defineProperty(element,"id",{get:function(){
 	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
 	if(audioElement.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
 	document.getElementById('text').hidden=true;
+  if(localStorage.getItem('devTools')){localStorage.setItem('cs','true');}
 	localStorage.setItem('devTools','true');
   //E-Exe
 }});console.log("%cHello",element);
@@ -54,7 +55,7 @@ function getRandomNumber(n){
 }
 if(getRandomNumber(5)<3){history.pushState({},'','dogtrolld');}
 function trueReset(){
-  	var r = ['rt','dogRolled','dogtrolld','devTools','devTold'];
+  	var r = ['csyes','cs','rt','dogRolled','dogtrolld','devTools','devTold'];
 	for(i in r){
 	localStorage.removeItem(r[i]);
 	}
@@ -63,8 +64,9 @@ function trueReset(){
 // S C R I P T
 onload=function(){
     //Konami Code
-    new Konami(function(){location='dogtrolld';});
-
+    if(!localStorage.getItem('cs')&&!localStorage.getItem('csyes')){new Konami(function(){location='dogtrolld';});}else{
+        new Konami(function(){localStorage.setItem('csyes');});
+    }
     setTimeout(function(){
 var imageElement = document.getElementById('img');
 var audioElement = document.createElement('audio');
@@ -100,23 +102,30 @@ switch(getRandomNumber(6)){
 imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';
 }else{
 imageElement.src='resources/Sans.png';
-audioElement.src='resources/sans.ogg';
-audioElement.volume=0.7;
+if(localStorage.getItem('csyes')){
+  audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg/';
+}else{
+audioElement.src='resources/sans.ogg';}
 }
+audioElement.volume=0.7;
+//Sans
 if(timesHere>7&&timesHere<11&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 	var s = document.getElementById('text');
 	s.innerHTML="Hey kid.";
 	document.title='A warning...';
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},3000);
-	setTimeout(function(){s.innerHTML='You mess with the dev tools, you mess with me.';},6000);
-	setTimeout(function(){s.innerHTML='Capiche?';},7500);
+	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},5300);
+	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},8000);
+  setTimeout(function(){s.innerHTML='Watch, I can redirect you. Can you defeat me?';},9900);
+  setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},11500);
 	localStorage.setItem('devTold','true');
-	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html';},8400);
+	setTimeout(function(){location='https://jcw87.github.io/c2-sans-fight/index.html';},12000);
 }
 if(timesHere>10){
     localStorage.removeItem('dogRolled');
-    document.getElementById('text').innerHTML="audioElement.";
-    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true'); history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
+    document.getElementById('text').innerHTML="nope.";
+    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true');
+    history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
     setTimeout(function(){document.getElementById('text').innerHTML="Here's to another one!";},4400);}
     setTimeout(function(){location.reload();},5600);
 }else{document.getElementById('text').innerHTML=String(timesHere);}
