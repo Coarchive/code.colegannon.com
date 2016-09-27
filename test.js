@@ -104,4 +104,4 @@ function stateWriter(state){
 	state.plugin();
 }
 stateWriter(currentState);
-setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
+var changeTitleInterval = setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
