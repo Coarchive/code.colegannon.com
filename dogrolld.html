@@ -13,14 +13,14 @@ body{
 }
 #text{
   font-size: 60px;
-	margin-top: 70px;
-	text-align: center;
+  margin-top: 70px;
+  text-align: center;
 }
 #img{
-	display: block;
+display: block;
   margin-right: auto;
-	margin-left: auto;
-	margin-top: 210px;
+  margin-left: auto;
+  margin-top: 210px;
 }
 </style>
 </head>
@@ -160,6 +160,7 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 			img.style.marginTop = '10px';
 			document.body.style.backgroundColor='black';
 			var iframe = document.body.appendChild(document.createElement('iframe'));
+			iframe.style='position:absolute; left: 0; right: 0; bottom: 0; top: 0px;';
 			iframe.width = window.innerWidth;
 			iframe.height = window.innerHeight;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
