@@ -150,15 +150,17 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 		document.title='A warning...';
   // % T H I S  D O E S N T  A L W A Y S  W O R K? %
 	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
-	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that";},10000);
+	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that.";},9000);
 	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
-  	setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},20000);
-  	setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},25000);
-	localStorage.setItem('devTold','true');
+  	setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},18000);
+  	setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},23000);
+	setTimeout(function(){s.innerHTML='Select normal when you are ready.'; 
+	localStorage.setItem('devTold','true');},38000);
 	setTimeout(function(){
 			s.hidden = true;
 			var img = document.getElementById('img');
 			img.style.marginTop = '10px';
+			img.style.opacity=0;
 		setTimeout(function(){
 			document.body.style.backgroundColor='black';
 			var iframe = document.body.appendChild(document.createElement('iframe'));
@@ -167,7 +169,7 @@ if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold
 			iframe.height = window.innerHeight;
 			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
 		},700);
-	},30000);
+	},45000);
     };
 }
 // K O N A M I  C O D E
