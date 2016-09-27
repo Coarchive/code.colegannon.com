@@ -65,7 +65,7 @@ function trueReset(){
 onload=function(){
     //Konami Code
     if(!localStorage.getItem('cs')&&!localStorage.getItem('csyes')){new Konami(function(){location='dogtrolld';});}else{
-        new Konami(function(){localStorage.setItem('csyes');});
+        new Konami(function(){localStorage.setItem('csyes','true');});
     }
     setTimeout(function(){
 var imageElement = document.getElementById('img');
@@ -102,7 +102,7 @@ switch(getRandomNumber(6)){
 imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';
 }else{
 imageElement.src='resources/Sans.png';
-if(localStorage.getItem('csyes','true')){
+if(localStorage.getItem('csyes')){
   audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg/';
 }else{
 audioElement.src='resources/sans.ogg';}
