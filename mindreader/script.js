@@ -4,7 +4,7 @@ TODO:
 + Screen Stuff
 + Battery - Done
 + Stats of website
-+ OS - DOne
++ OS - Done
 + Geolocation
 + Notifications
 + Online
