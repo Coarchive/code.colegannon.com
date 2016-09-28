@@ -2,10 +2,10 @@
 onload = function(){
 var timesVisited = localStorage.getItem("dogRolled"),
     currentTitle,
-		currentState,
+    currentState,
     imageElement = document.getElementById('img'),
     audioElement = document.getElementById('audio'),
-		textElement = document.getElementById('text');
+    textElement = document.getElementById('text');
 // F U N C T I O N S
 function setText(string){
 	textElement.innerHTML=string;
@@ -14,9 +14,10 @@ function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
 }
 function trueReset() {
-	var r = ['dogRolled', 'devTools', 'devTools2', 'devTold', 'sansSpecial'];
-	r.forEach(localStorage.removeItem, localStorage);
+   var r = ['dogRolled', 'devTools', 'devTools2', 'devTold', 'sansSpecial'];
+   r.forEach(localStorage.removeItem, localStorage);
 }
+window.trueReset = trueReset;
 
 // S T A T E
 var danceOfDog = {
