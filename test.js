@@ -61,9 +61,11 @@ var Sans = {
 };
 var Asriel = {
 	music:function(){
-
+    audioElement.src='/resources/menu6.ogg';
 	},
-	image:function(){},
+	image:function(){
+    imageElement.src='/resources/Asriel_Dreemur.gif';
+  },
 	txt:function(){},
 	plugin:function(){}
 };
@@ -83,16 +85,16 @@ var Default = {
 		case 5:
 		case 6:
 		case 7:
-		currentState=danceOfDog;
+		  currentState=danceOfDog;
 		break;
 		case 8:
 		case 9:
 		case 10:
 		case 11:
-		currentState=Sans;
+		  currentState=Sans;
 		break;
 		default:
-		currentState=Asriel;
+		  currentState=Asriel;
 	}
 })();
 function stateWriter(state){
