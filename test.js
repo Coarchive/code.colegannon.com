@@ -48,8 +48,7 @@ var Sans = {
 		if(!localStorage.getItem('sansSpecial')){
 			audioElement.src='/resources/sans.ogg';
 		}else{
-			//I appoligize, but the turnary operator makes it easyer to understand.
-			getRandomNumber(7)==2?audioElement.src='/resources/megalovania.ogg':audioElement.src='/resources/SongThatMightPlayWhenYouFightSans.ogg';
+			audioElement.src=(getRandomNumber(7)==2?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
 		}
 	},
 	image:function(){
@@ -106,7 +105,7 @@ stateWriter(currentState);
 setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
 
 // D E V T O O L S  L I S T E N E R
-var element=new Image;Object.defineProperty(element,"id",{get:function(){
+var element=new Image();Object.defineProperty(element,"id",{get:function(){
   //S-Exe
 	document.body.style.backgroundColor='black';
 	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
