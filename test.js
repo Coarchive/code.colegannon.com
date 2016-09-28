@@ -1,6 +1,6 @@
 // V A R I A B L E S
 onload = function(){
-var timesVisited = localStorage.getItem("dogRolled"),
+var timesVisited = Number(localStorage.getItem("dogRolled")),
     currentTitle,
     currentState,
     imageElement = document.getElementById('img'),
@@ -129,6 +129,7 @@ function stateWriter(state){
 	state.plugin();
 }
 stateWriter(currentState);
+localStorage.setItem("dogRolled", String(timesVisited + 1));
 window.currentState = currentState;
 var changeTitleInterval = setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
 window.timesVisited = timesVisited;
