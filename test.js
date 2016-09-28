@@ -79,6 +79,16 @@ var Asriel = {
 	txt:function(){},
 	plugin:function(){}
 };
+var Hacker = {
+	music:function(){
+	
+	},
+	image:function(){
+	  imageElement.src='/resources/dirtyHacker.png';
+	},
+	txt:function(){},
+	plugin:function(){}
+};
 var Default = {
 	music:function(){},
 	image:function(){},
@@ -104,7 +114,7 @@ var Default = {
 		  currentState=Sans;
 		break;
 		default:
-		  currentState=Asriel;
+		  currentState=Hacker;
 	}
 })();
 function stateWriter(state){
