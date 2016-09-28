@@ -5,7 +5,7 @@ var timesVisited,
 		currentState,
     imageElement = document.getElementById('img'),
     audioElement = document.getElementById('audio'),
-		textElement = doucment.getElementById('text');
+		textElement = document.getElementById('text');
 // F U N C T I O N S
 function setText(string){
 	textElement.innerHTML=string;
