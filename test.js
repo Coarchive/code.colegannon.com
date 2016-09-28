@@ -55,6 +55,15 @@ var Sans = {
 		imageElement.src='/resources/Sans.png';
 	},
 	txt:function(){
+		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
+			setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
+			setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that.";},9000);
+			setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
+		  setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},18000);
+		  setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},23000);
+			setTimeout(function(){s.innerHTML='Select normal when you are ready.';
+			localStorage.setItem('devTold','true');},38000);
+		}
 
 	},
 	plugin:function(){}
