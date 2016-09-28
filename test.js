@@ -45,8 +45,8 @@ var danceOfDog = {
 							audioElement.playbackRate=Math.random()+0.6;
 			}
 		},
-    image:function(){imageElement.src='/resources/SmallAdog.ogg';},
-	  txt:function(){setText(timesHere);},
+    image:function(){imageElement.src='/resources/SmallAdog.gif';},
+	  txt:function(){setText(timesVisited);},
 		plugin:function(){},
 };
 var Sans = {
@@ -62,13 +62,15 @@ var Sans = {
 	},
 	txt:function(){
 		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
-			setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
-			setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that.";},9000);
-			setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
-		  setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},18000);
-		  setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},23000);
-			setTimeout(function(){s.innerHTML='Select normal when you are ready.';
+			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
+			setTimeout(function(){setText("If you don't know what you're doing, you probably shouldn't do that.");},9000);
+			setTimeout(function(){setText('There are some nifty tricks in the dev tools though.');},15000);
+		  setTimeout(function(){setText('Watch, I can attack you. Can you defeat me?');},18000);
+		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
+			setTimeout(function(){setText('Select normal when you are ready.');
 			localStorage.setItem('devTold','true');},38000);
+		} else {
+			setText(timesVisited);
 		}
 
 	},
