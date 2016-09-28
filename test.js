@@ -129,8 +129,9 @@ function stateWriter(state){
 	state.plugin();
 }
 stateWriter(currentState);
+widnow.currentState = currentState;
 var changeTitleInterval = setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
-
+window.changeTitleInterval = changeTitleInterval;
 // D E V T O O L S  L I S T E N E R
 var element=new Image();Object.defineProperty(element,"id",{get:function(){
   //S-Exe
