@@ -1,4 +1,5 @@
 // V A R I A B L E S
+onload = function(){
 var timesVisited,
     currentTitle,
 		currentState,
@@ -126,3 +127,4 @@ var element=new Image();Object.defineProperty(element,"id",{get:function(){
 	localStorage.setItem('devTools','true');
   //E-Exe
 }});console.log("%cHello",element);
+}
