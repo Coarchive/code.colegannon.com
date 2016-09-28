@@ -48,17 +48,15 @@ var Sans = {
 		if(!localStorage.getItem('sansSpecial')){
 			audioElement.src='/resources/sans.ogg';
 		}else{
-			if (getRandomNumber(7)==2) {
-        audioElement.src='/resources/megalovania.ogg';
-      } else {
-        audioElement.src='/resources/SongThatMightPlayWhenYouFightSans.ogg';
-      }
+			audioElement.src=(getRandomNumber(7)==2?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
 		}
 	},
 	image:function(){
+		imageElement.src='/resources/Sans.png';
+	},
+	txt:function(){
 
 	},
-	txt:function(){},
 	plugin:function(){}
 };
 var Asriel = {
@@ -105,3 +103,15 @@ function stateWriter(state){
 }
 stateWriter(currentState);
 var changeTitleInterval = setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
+
+// D E V T O O L S  L I S T E N E R
+var element=new Image();Object.defineProperty(element,"id",{get:function(){
+  //S-Exe
+	document.body.style.backgroundColor='black';
+	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+	if(audioElement.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
+	document.getElementById('text').hidden=true;
+  if(localStorage.getItem('devTold')){localStorage.setItem('devTools2','true');}
+	localStorage.setItem('devTools','true');
+  //E-Exe
+}});console.log("%cHello",element);
