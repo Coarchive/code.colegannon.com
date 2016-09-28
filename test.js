@@ -1,6 +1,6 @@
 // V A R I A B L E S
 onload = function(){
-var timesVisited,
+var timesVisited = localStorage.getItem("dogRolled"),
     currentTitle,
 		currentState,
     imageElement = document.getElementById('img'),
@@ -12,6 +12,10 @@ function setText(string){
 }
 function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
+}
+function trueReset() {
+	var r = ['dogRolled', 'devTools', 'devTools2', 'devTold', 'sansSpecial'];
+	r.forEach(localStorage.removeItem, localStorage);
 }
 
 // S T A T E
