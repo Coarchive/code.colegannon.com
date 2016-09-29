@@ -49,6 +49,9 @@ var danceOfDog = {
 	  txt:function(){setText(timesVisited);},
 		plugin:function(){},
 };
+
+
+// S A N S
 var Sans = {
 	music:function(){
 		if(!localStorage.getItem('sansSpecial')){
@@ -76,6 +79,8 @@ var Sans = {
 	},
 	plugin:function(){}
 };
+
+
 var Asriel = {
 	music:function(){
     audioElement.src='/resources/menu6.ogg';
@@ -88,7 +93,7 @@ var Asriel = {
 };
 var Hacker = {
 	music:function(){
-	
+
 	},
 	image:function(){
 	  imageElement.src='/resources/dirtyHacker.png';
@@ -135,6 +140,7 @@ localStorage.setItem("dogRolled", String(timesVisited + 1));
 window.currentState = currentState;
 var changeTitleInterval = setInterval(function titleChanger(){if(currentTitle){document.title='Rekt';currentTitle=0;}else{document.title='Get';currentTitle=1;}},500);
 window.timesVisited = timesVisited;
+
 // D E V T O O L S  L I S T E N E R
 var element=new Image();Object.defineProperty(element,"id",{get:function(){
   //S-Exe
