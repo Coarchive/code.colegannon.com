@@ -28,236 +28,177 @@ display: block;
 <body>
 <img id='img'>
 <div id='text'></div>
-<audio id='audioElement' autoplay loop></audio>
+<audio id='audio' autoplay loop></audio>
 <script>
-var imageElement = document.getElementById('img');
-var audioElement = document.getElementById('audioElement');
-// T I T L E
-var t=0;
-setInterval(function(){if(t){document.title='Rekt';t=0;}else{document.title='Get';t=1;}},500);
-
-// V I S I T  C O U N T E R
-var timesHere;
-if(!localStorage.getItem('dogRolled')){timesHere=1;}else{
-timesHere = Number(localStorage.getItem('dogRolled'));}
-localStorage.removeItem('dogRolled');
-localStorage.setItem('dogRolled',timesHere+1);
-
-// D E V E L O P E R  T O O L S  L I S T E N E R
-/*var element=new Image;Object.defineProperty(element,"id",{get:function(){
-  //S-Exe
-	document.body.style.backgroundColor='black';
-	document.getElementById('img').src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
-	if(audioElement.src!='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg'){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';}
-	document.getElementById('text').hidden=true;
-  if(localStorage.getItem('devTools')){localStorage.setItem('cs','true');}
-	localStorage.setItem('devTools','true');
-  //E-Exe
-}});console.log("%cHello",element);
-*/
-// R A N D O M  S T U F F
+// V A R I A B L E S
+onload = function(){
+var timesVisited = Number(localStorage.getItem("dogRolled")),
+    currentTitle,
+    currentState,
+    d=document;
+    imageElement = d.getElementById('img'),
+    audioElement = d.getElementById('audio'),
+    textElement = d.getElementById('text');
+// F U N C T I O N S
+function setText(string){
+	textElement.innerHTML=string;
+}
 function getRandomNumber(n){
     return Math.floor((Math.random() * n) + 1);
 }
-if(getRandomNumber(5)===1){history.pushState({},'','dogtrolld');}
-function trueReset(){
-  	var r = ['csyes','cs','rt','dogRolled','dogtrolld','devTools','devTold'];
-	for(i in r){
-	localStorage.removeItem(r[i]);
-	}
+function trueReset() {
+   var r = ['dogRolled','dogTrolld','dogTold', 'devTools', 'devTools2', 'devTold', 'sansSpecial', 'konamiSans'];
+   r.forEach(localStorage.removeItem, localStorage);
 }
+window.trueReset = trueReset;
 
-// S C R I P T
-onload=function(){
-    //Konami Code
-    if(!localStorage.getItem('cs')&&!localStorage.getItem('csyes')){new Konami(function(){location='dogtrolld';});}else{
-        new Konami(function(){localStorage.setItem('csyes','true');});
-    }
-    setTimeout(function(){
-	if(timesHere<7){
-		switch(getRandomNumber(6)){
-		    case 1:
-		        console.log(1);
-		        audioElement.src='https://dl.dropboxusercontent.com/s/nduw0g77r7py7yw/DOD.ogg';
-		                audioElement.volume=0.6;
-		    break;
-		    case 2:
-		        console.log(2);
-		        audioElement.src="https://dl.dropboxusercontent.com/s/wr7z9m7c9muowp8/0.5.ogg";
-		                audioElement.volume=0.4;
-		    break;
-		    case 3:
-		        console.log(3);
-		        audioElement.src="https://dl.dropboxusercontent.com/s/0dyle37qabrrsin/1.ogg";
-		        audioElement.volume=0.6;
-		    break;
-		    case 4:
-		        console.log(4);
-		    case 5:
-		        console.log(5);
-		    case 6:
-		        console.log(6);
-		        audioElement.src='https://dl.dropboxusercontent.com/s/4aha6f8rvn5yl1q/Dogsong.ogg';
-		        audioElement.playbackRate=Math.random()+0.6;
+// S T A T E
+var danceOfDog = {
+    music:function(){
+			switch(getRandomNumber(9)){
+			    case 1:
+			        audioElement.src='/resources/DOD.ogg';
+			        audioElement.volume=0.6;
+			    break;
+			    case 2:
+			        audioElement.src="/resources/0.5.ogg";
+			        audioElement.volume=0.6;
+			    break;
+			    case 3:
+			        audioElement.src="/resources/1.ogg";
+			        audioElement.volume=0.6;
+			    break;
+			    case 4:
+			    case 5:
+			    case 6:
+					case 7:
+					case 8:
+					case 9:
+			        audioElement.src='/resources/Dogsong.ogg';
+							audioElement.playbackRate=Math.random()+0.6;
+			}
+		},
+    image:function(){imageElement.src='/resources/SmallAdog.gif';},
+	  txt:function(){setText(timesVisited);},
+		plugin:function(){},
+};
+
+
+// S A N S
+// F I N I S H E D
+var sans = {
+	music:function(){
+		if(!localStorage.getItem('sansSpecial')){
+			audioElement.src='/resources/sans.ogg';
+		}else{
+			audioElement.src=(getRandomNumber(7)==2?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
 		}
-	imageElement.src='https://dl.dropboxusercontent.com/s/n1y1k64bb33dzrp/SmallAdog.gif';
+	},
+	image:function(){
+		imageElement.src='/resources/Sans.png';
+	},
+	txt:function(){
+		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
+			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
+			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
+			setTimeout(function(){setText('You might find some eggs, even though it\'s not easter.');},15000);
+		  setTimeout(function(){setText('Let\'s play a game. . .');},18000);
+		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
+			setTimeout(function(){setText('Select normal when you are ready.');
+			localStorage.setItem('devTold','true');},38000);
+      window.location='https://jcw87.github.io/c2-sans-fight/';
+		} else if(localStorage.getItem('dogTrolld')){
+        if(!localStorage.getItem('dogTold')){
+        setText('Heh.');
+        setTimeout(function(){setText('I see you got ricked...');},3000);
+        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogTrolld';},6000);
+      }else{
+        localStorage.setItem('konamiSans');
+      }
     }else{
-	imageElement.src='resources/Sans.png';
-	if(localStorage.getItem('csyes')&&timesHere!=11){
-  		if(getRandomNumber(8)>4){
-  			audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/1/18/SongThatMightPlayWhenYouFightSans.ogg';
-  		}else{
-  			audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/d/d3/Mus_zz_megalovania.ogg';
-  		}
-	}else{
-		audioElement.src='resources/sans.ogg';}
-    	}
-    audioElement.volume=0.7;
-//Reset
-if(timesHere==11){
-    localStorage.removeItem('dogRolled');
-    document.getElementById('text').innerHTML="nope.";
-    if(localStorage.getItem('dogtrolld')&&!localStorage.getItem('rt')){localStorage.setItem('rt','true');
-    history.pushState({},'','dogtrolld'); document.getElementById('text').innerHTML="Wow. You look pissed. I guess you got dogtrolld!";
-    setTimeout(function(){document.getElementById('text').innerHTML="Here's to another one!";},4400);}else{
+      setText(timesVisited);
     }
-    setTimeout(function(){location.reload();},5600);
-}else{document.getElementById('text').innerHTML=String(timesHere);}
-audioElement.play();},200);
+  }
+};
 
-if(timesHere>11){
-	var imageElement = document.getElementById('img');
-	var audioElement = document.createElement('audio');
-	imageElement.src='resources/dirtyHacker.png';
-	audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/5/5b/Mus_menu6.ogg';
-	document.body.style.backgroundColor='black';
-}
-//Sans scolds you about dev tools
-if(timesHere>7&&localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
-	var s;
-	s = document.getElementById('text');
-	audioElement.src='http://vignette2.wikia.nocookie.net/undertale/images/d/d3/Mus_zz_megalovania.ogg';
-	audioElement.autoplay=true;
-	audioElement.loop=true;
-	audioElement.id='audioElement';
-	imageElement.src='resources/Sans.png';
-	s.innerHTML="Hey kid.";
-	document.title='A warning...';
-  // % T H I S  D O E S N T  A L W A Y S  W O R K? %
-	setTimeout(function(){s.innerHTML='I see you were messing with the dev tools. . .';},5000);
-	setTimeout(function(){s.innerHTML="If you don't know what you're doing, you probably shouldn't do that.";},9000);
-	setTimeout(function(){s.innerHTML='There are some nifty tricks in the dev tools though.';},15000);
-  	setTimeout(function(){s.innerHTML='Watch, I can attack you. Can you defeat me?';},18000);
-  	setTimeout(function(){s.innerHTML='"Z" is [okay] "X" is [back]. Use the arrow keys to move.';},23000);
-	setTimeout(function(){s.innerHTML='Select normal when you are ready.';
-	localStorage.setItem('devTold','true');},38000);
-	setTimeout(function(){
-		s.hidden = true;
-		var img = document.getElementById('img');
-		img.style.marginTop = '10px';
-		img.style.opacity=0;
-		setTimeout(function(){
-			document.body.style.backgroundColor='black';
-			var iframe = document.body.appendChild(document.createElement('iframe'));
-			iframe.style='position:absolute; left: 0; right: 0; bottom: 0; top: 0px;';
-			iframe.width = window.innerWidth;
-			iframe.height = window.innerHeight;
-			iframe.src='https://jcw87.github.io/c2-sans-fight/index.html';
-		},700);
-	},45000);
-}
+
+var Asriel = {
+	music:function(){
+    audioElement.src='/resources/menu6.ogg';
+	},
+	image:function(){
+    imageElement.src='/resources/AsrielDreemur.gif';
+  },
+	txt:function(){},
+  };
 };
-// K O N A M I  C O D E
-var Konami = function (callback) {
-	var konami = {
-		addEvent: function (obj, type, fn, ref_obj) {
-			if (obj.addEventListener)
-				obj.addEventListener(type, fn, false);
-			else if (obj.attachEvent) {
-				// IE
-				obj["e" + type + fn] = fn;
-				obj[type + fn] = function () {
-					obj["e" + type + fn](window.event, ref_obj);
-				};
-				obj.attachEvent("on" + type, obj[type + fn]);
-			}
-		},
-		input: "",
-		pattern: "38384040373937396665",
-		load: function (link) {
-			this.addEvent(document, "keydown", function (e, ref_obj) {
-				if (ref_obj) konami = ref_obj; // IE
-				konami.input += e ? e.keyCode : event.keyCode;
-				if (konami.input.length > konami.pattern.length)
-					konami.input = konami.input.substr((konami.input.length - konami.pattern.length));
-				if (konami.input == konami.pattern) {
-					konami.code(link);
-					konami.input = "";
-					e.preventDefault();
-					return false;
-				}
-			}, this);
-			this.iphone.load(link);
-		},
-		code: function (link) {
-			window.location = link;
-		},
-		iphone: {
-			start_x: 0,
-			start_y: 0,
-			stop_x: 0,
-			stop_y: 0,
-			tap: false,
-			capture: false,
-			orig_keys: "",
-			keys: ["UP", "UP", "DOWN", "DOWN", "LEFT", "RIGHT", "LEFT", "RIGHT", "TAP", "TAP"],
-			code: function (link) {
-				konami.code(link);
-			},
-			load: function (link) {
-				this.orig_keys = this.keys;
-				konami.addEvent(document, "touchmove", function (e) {
-					if (e.touches.length == 1 && konami.iphone.capture == true) {
-						var touch = e.touches[0];
-						konami.iphone.stop_x = touch.pageX;
-						konami.iphone.stop_y = touch.pageY;
-						konami.iphone.tap = false;
-						konami.iphone.capture = false;
-						konami.iphone.check_direction();
-					}
-				});
-				konami.addEvent(document, "touchend", function (evt) {
-					if (konami.iphone.tap == true) konami.iphone.check_direction(link);
-				}, false);
-				konami.addEvent(document, "touchstart", function (evt) {
-					konami.iphone.start_x = evt.changedTouches[0].pageX;
-					konami.iphone.start_y = evt.changedTouches[0].pageY;
-					konami.iphone.tap = true;
-					konami.iphone.capture = true;
-				});
-			},
-			check_direction: function (link) {
-				x_magnitude = Math.abs(this.start_x - this.stop_x);
-				y_magnitude = Math.abs(this.start_y - this.stop_y);
-				x = ((this.start_x - this.stop_x) < 0) ? "RIGHT" : "LEFT";
-				y = ((this.start_y - this.stop_y) < 0) ? "DOWN" : "UP";
-				result = (x_magnitude > y_magnitude) ? x : y;
-				result = (this.tap == true) ? "TAP" : result;
-				if (result == this.keys[0]) this.keys = this.keys.slice(1, this.keys.length);
-				if (this.keys.length == 0) {
-					this.keys = this.orig_keys;
-					this.code(link);
-				}
-			}
-		}
-	};
-	typeof callback === "string" && konami.load(callback);
-	if (typeof callback === "function") {
-		konami.code = callback;
-		konami.load();
+
+var Default= {
+  music:function(){},
+  image:function(){},
+  txt:function(){}
+};
+var Devroom = {
+	music:function(){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';},
+	image:function(){imageElement.src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+  d.body.style.backgroundColor='black';
+  },
+	txt:function(){textElement.hidden=true;
+    //Yes, I know it's not text
+    if(localStorage.getItem('devTold')){localStorage.setItem('devTools2','true');}
+  	localStorage.setItem('devTools','true');
+  },
+};
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+//Website Code
+(function stateDeterminer(){
+	switch (timesVisited) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		  currentState=danceOfDog;
+		break;
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		  currentState=sans;
+		break;
+		default:
+		  currentState=Asriel;
 	}
-	return konami;
-};
+})();
+function stateWriter(state){
+	state.music();
+  state.image();
+	state.txt();
+  currentState=state;
+}
+stateWriter(currentState);
+localStorage.setItem("dogRolled", String(timesVisited + 1));
+window.currentState = currentState;
+var changeTitleInterval = setInterval(function titleChanger(){
+  if(currentTitle){d.title='Rekt';currentTitle=0;}else{d.title='Get';currentTitle=1;}
+},500);
+window.timesVisited = timesVisited;
+
+// D E V T O O L S  L I S T E N E R
+var element=new Image();Object.defineProperty(element,"id",{get:function(){
+  //S-Exe
+  if(currentState!=devTools){stateWriter(devTools);}
+
+  //E-Exe
+}});console.log("%cHello",element);
+}
+
 </script>
 </body>
 </html>
