@@ -31,11 +31,10 @@ display: block;
 <audio id='audio' autoplay loop></audio>
 <script>
 // V A R I A B L E S
-onload = function(){
 var timesVisited = Number(localStorage.getItem("dogRolled")),
     currentTitle,
     currentState,
-    d=document;
+    d=document,
     imageElement = d.getElementById('img'),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
@@ -91,13 +90,16 @@ var sans = {
 		if(!localStorage.getItem('sansSpecial')){
 			audioElement.src='/resources/sans.ogg';
 		}else{
-			audioElement.src=(getRandomNumber(7)==2?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
+			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
 		}
 	},
 	image:function(){
 		imageElement.src='/resources/Sans.png';
 	},
 	txt:function(){
+    if (localStorage.getItem('devTold')) {
+      localStorage.setItem('konamiSans', 1);
+    }
 		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
 			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
@@ -125,19 +127,20 @@ var sans = {
 var Asriel = {
 	music:function(){
     audioElement.src='/resources/menu6.ogg';
-	},
+  },
 	image:function(){
     imageElement.src='/resources/AsrielDreemur.gif';
+    d.body.style.backgroundColor='black';
   },
 	txt:function(){},
   };
-};
 
 var Default= {
   music:function(){},
   image:function(){},
   txt:function(){}
 };
+
 var Devroom = {
 	music:function(){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';},
 	image:function(){imageElement.src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
