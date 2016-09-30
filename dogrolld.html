@@ -131,7 +131,12 @@ var sans = {
       setText(timesVisited);
     }
   }else{
-    setTimeout(function(){location.reload();},5000);
+    setText('Okay, eleven was fine but twelve,');
+    setTimeout(function(){setText('Twelve is just an excessive number.');},3000);
+    setTimeout(function(){setText('Do you really think that I can kill you that many times?');},6000);
+    // EKCS DEE ^--^
+    setTimeout(function(){setText('Do you think that I can count that high on my fingers?');},6200);
+    setTimeout(function(){location.reload();},8000);
     localStorage.removeItem('dogRolled');
     setText(timesVisited);
   }
@@ -211,11 +216,12 @@ var changeTitleInterval = setInterval(function titleChanger(){
 window.timesVisited = timesVisited;
 
 // D E V T O O L S  L I S T E N E R
+/*
 var element=new Image();Object.defineProperty(element,"id",{get:function(){
   if(currentState!=Devroom){stateWriter(Devroom);}
 }});console.log("%cHello",element);
 
-
+*/
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 var Konami = function (callback) {
 	var konami = {
