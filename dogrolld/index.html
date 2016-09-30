@@ -44,7 +44,9 @@ var currentTitle,
 localStorage.setItem("dogRolled", timesVisited);
 onload=function(){
   if(localStorage.getItem('konamiSans')){
-    new Konami(function(){localStorage.setItem('sansSpecial',1);});
+    new Konami(function(){localStorage.setItem('sansSpecial',1);
+    audioElement.src='dogrolld/resources/Energy Drink.mp3'
+  });
   }else{
     new Konami(function(){location='/dogtrolld';});
   }
@@ -221,6 +223,7 @@ window.timesVisited = timesVisited;
 var element=new Image();Object.defineProperty(element,"id",{get:function(){
   if(currentState!=Devroom){stateWriter(Devroom);}
 }});console.log("%cHello",element);
+};
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 var Konami = function (callback) {
 	var konami = {
@@ -314,7 +317,6 @@ var Konami = function (callback) {
 	}
 
 	return konami;
-};
 };
 </script>
 </body>
