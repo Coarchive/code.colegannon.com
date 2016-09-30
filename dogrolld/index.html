@@ -45,7 +45,7 @@ onload=function(){
   if(localStorage.getItem('konamiSans')){
     new Konami(function(){localStorage.setItem('sansSpecial',1);});
   }else{
-    new Konami(function(){location='//rick.amigocraft.net';});
+    new Konami(function(){location='/dogtrolld';});
   }
 };
 // F U N C T I O N S
@@ -110,7 +110,7 @@ var sans = {
 		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
       setText('Hey Kid....');
 			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
-			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
+			setTimeout(function(){setText("Try entering: \" location='/dogtrolld'; \"");},9000);
 			setTimeout(function(){setText('You might find some eggs, even though it\'s not easter.');},15000);
 		  setTimeout(function(){setText('Let\'s play a game. . .');},18000);
 		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
@@ -121,7 +121,7 @@ var sans = {
         if(!localStorage.getItem('dogTold')){
         setText('Heh.');
         setTimeout(function(){setText('I see you got ricked...');},3000);
-        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogtrolld';},6000);
+        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='/dogtrolld';},6000);
       }
     }else{
       setText(timesVisited);
