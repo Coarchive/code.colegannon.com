@@ -66,25 +66,24 @@ var danceOfDog = {
     music:function(){
 			switch(getRandomNumber(9)){
 			    case 1:
-			        audioElement.src='/resources/DOD.ogg';
+			        audioElement.src='resources/Dance of Dog.ogg';
 			    break;
 			    case 2:
-			        audioElement.src="/resources/0.5.ogg";
+			        audioElement.src="resources/Dance of Dog-1.ogg";
 			    break;
 			    case 3:
-			        audioElement.src="/resources/1.ogg";
+			        audioElement.src="resources/Dance of Dog-0.7.ogg";
 			    break;
 			    case 4:
 			    case 5:
 			    case 6:
 					case 7:
 					case 8:
-					case 9:
 			        audioElement.src='/resources/Dogsong.ogg';
 							audioElement.playbackRate=Math.random()+0.6;
 			}
 		},
-    image:function(){imageElement.src='/resources/SmallAdog.gif';},
+    image:function(){imageElement.src='resources/Annoying-Dog.gif';},
 	  txt:function(){setText(timesVisited);},
 		plugin:function(){},
 };
@@ -95,14 +94,13 @@ var danceOfDog = {
 var sans = {
 	music:function(){
 		if(!localStorage.getItem('sansSpecial')){
-			audioElement.src='/resources/sans.ogg';
+			audioElement.src='resources/Sans.ogg';
 		}else{
-			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
-      var xd = d.createElement('img'); xd.id="xd"; xd.style.opacity=0; xd.src='/resources/Sans.png'; document.body.appendChild(xd);
-    		}
+			audioElement.src=(getRandomNumber(7)<3?'resources/Megalovania.ogg':'resources/SongThatMightPlayWhenYouFightSans.ogg');
+      }
 	},
 	image:function(){
-		imageElement.src='/resources/Sans.png';
+		imageElement.src='resources/Sans.png';
 	},
 	txt:function(){
     if (localStorage.getItem('devTold')) {
@@ -123,7 +121,7 @@ var sans = {
         if(!localStorage.getItem('dogTold')){
         setText('Heh.');
         setTimeout(function(){setText('I see you got ricked...');},3000);
-        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogTrolld';},6000);
+        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogtrolld';},6000);
       }
     }else{
       setText(timesVisited);
@@ -143,10 +141,10 @@ var sans = {
 
 var Asriel = {
 	music:function(){
-    audioElement.src='/resources/menu6.ogg';
+    audioElement.src='resources/Menu.ogg';
   },
 	image:function(){
-    imageElement.src='/resources/AsrielDreemur.gif';
+    imageElement.src='resources/AsrielDreemur.gif';
     d.body.style.backgroundColor='black';
   },
 	txt:function(){},
@@ -162,8 +160,8 @@ var Devroom = {
 	music:function(){
 
     audioElement.playbackRate=Math.random()+0.6;
-    audioElement.src='/resources/Mus_dogroom.ogg';},
-	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
+    audioElement.src='/resources/Dogroom.ogg';},
+	image:function(){imageElement.src='resources/Devroom.png';
   d.body.style.backgroundColor='black';
   },
 	txt:function(){textElement.hidden=true;
@@ -174,7 +172,7 @@ var Devroom = {
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
+if(getRandomNumber(7)<3){window.history.pushState({},"",'dogtrolld');}
 
 //Website Code
 (function stateDeterminer(){
