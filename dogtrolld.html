@@ -1,10 +1,32 @@
 <html>
 <body>
-  <img src='/resources/Sans.jpg'>
+<style>
+body{
+  background-color:white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+#text{
+  font-size: 60px;
+  margin-top: 70px;
+  text-align: center;
+}
+#img{
+display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 210px;
+  transition: all 500ms;
+}
+</style>
+  <img id='img' src='/resources/Sans.jpg'>
     <script>
     onload=function(){
     history.pushState({}, "", "dogrolld");
-    localStorage.setItem('dogtrolld','true');
+    localStorage.setItem('dogTrolld','true');
     location='//rick.amigocraft.net';
   };
     </script>
