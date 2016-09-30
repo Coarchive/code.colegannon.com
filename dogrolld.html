@@ -23,13 +23,6 @@ display: block;
   margin-top: 210px;
   transition: all 500ms;
 }
-#XD{
-display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 210px;
-  transition: all 1700ms;
-}
 </style>
 </head>
 <body>
@@ -107,8 +100,7 @@ var sans = {
 		}else{
 			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
       var xd = d.createElement('img'); xd.id="xd"; xd.style.opacity=0; xd.src='/resources/Sans.png'; document.body.appendChild(xd);
-      setTimeout(function(){xd.style.opacity=1;},15000);
-		}
+    		}
 	},
 	image:function(){
 		imageElement.src='/resources/Sans.png';
