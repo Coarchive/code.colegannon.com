@@ -31,6 +31,7 @@ display: block;
 <audio id='audio' autoplay loop></audio>
 <script>
 // V A R I A B L E S
+onload=function(){
 var timesVisited = 1+Number(localStorage.getItem("dogRolled"));
 console.log(timesVisited);
 var currentTitle,
@@ -316,6 +317,7 @@ var Konami = function (callback) {
 
 	return konami;
 };
+}; 
 </script>
 </body>
 </html>
