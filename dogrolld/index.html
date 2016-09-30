@@ -121,7 +121,9 @@ var sans = {
         if(!localStorage.getItem('dogTold')){
         setText('Heh.');
         setTimeout(function(){setText('I see you got ricked...');},3000);
-        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='/dogtrolld';},6000);
+        setTimeout(function(){setText('Welp, here\'s to another one!');
+        localStorage.setItem('dogTold');
+        window.location='/dogtrolld';},6000);
       }
     }else{
       setText(timesVisited);
