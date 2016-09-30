@@ -70,24 +70,24 @@ var danceOfDog = {
     music:function(){
 			switch(getRandomNumber(9)){
 			    case 1:
-			        audioElement.src='resources/Dance of Dog.ogg';
+			        audioElement.src='/dogrolld/resources/Dance of Dog.ogg';
 			    break;
 			    case 2:
-			        audioElement.src="resources/Dance of Dog-1.ogg";
+			        audioElement.src="/dogrolld/resources/Dance of Dog-1.ogg";
 			    break;
 			    case 3:
-			        audioElement.src="resources/Dance of Dog-0.7.ogg";
+			        audioElement.src="/dogrolld/resources/Dance of Dog-0.7.ogg";
 			    break;
 			    case 4:
 			    case 5:
 			    case 6:
 					case 7:
 					case 8:
-			        audioElement.src='resources/Dogsong.ogg';
+			        audioElement.src='/dogrolld/resources/Dogsong.ogg';
 							audioElement.playbackRate=Math.random()+0.6;
 			}
 		},
-    image:function(){imageElement.src='resources/Annoying-Dog.gif';},
+    image:function(){imageElement.src='/dogrolld/resources/Annoying-Dog.gif';},
 	  txt:function(){setText(timesVisited);},
 		plugin:function(){},
 };
@@ -98,13 +98,13 @@ var danceOfDog = {
 var sans = {
 	music:function(){
 		if(!localStorage.getItem('sansSpecial')){
-			audioElement.src='resources/Sans.ogg';
+			audioElement.src='/dogrolld/resources/Sans.ogg';
 		}else{
-			audioElement.src=(getRandomNumber(7)<3?'resources/Megalovania.ogg':'resources/SongThatMightPlayWhenYouFightSans.ogg');
+			audioElement.src=(getRandomNumber(7)<3?'/dogrolld/resources/Megalovania.ogg':'/dogrolld/resources/SongThatMightPlayWhenYouFightSans.ogg');
       }
 	},
 	image:function(){
-		imageElement.src='resources/Sans.png';
+		imageElement.src='/dogrolld/resources/Sans.png';
 	},
 	txt:function(){
     if (localStorage.getItem('devTold')) {
@@ -147,10 +147,10 @@ var sans = {
 
 var Asriel = {
 	music:function(){
-    audioElement.src='resources/Menu.ogg';
+    audioElement.src='/dogrolld/resources/Menu.ogg';
   },
 	image:function(){
-    imageElement.src='resources/AsrielDreemur.gif';
+    imageElement.src='/dogrolld/resources/AsrielDreemur.gif';
     d.body.style.backgroundColor='black';
   },
 	txt:function(){},
@@ -166,8 +166,8 @@ var Devroom = {
 	music:function(){
 
     audioElement.playbackRate=Math.random()+0.6;
-    audioElement.src='resources/Dogroom.ogg';},
-	image:function(){imageElement.src='resources/Devroom.png';
+    audioElement.src='/dogrolld/resources/Dogroom.ogg';},
+	image:function(){imageElement.src='/dogrolld/resources/Devroom.png';
   d.body.style.backgroundColor='black';
   },
 	txt:function(){textElement.hidden=true;
