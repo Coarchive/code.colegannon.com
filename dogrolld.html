@@ -111,8 +111,8 @@ var sans = {
 		  setTimeout(function(){setText('Let\'s play a game. . .');},18000);
 		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
 			setTimeout(function(){setText('Select normal when you are ready.');
-			localStorage.setItem('devTold','true');},38000);
-      window.location='https://jcw87.github.io/c2-sans-fight/';
+			localStorage.setItem('devTold','true');
+      window.location='https://jcw87.github.io/c2-sans-fight/';},38000);
 		} else if(localStorage.getItem('dogTrolld')){
         if(!localStorage.getItem('dogTold')){
         setText('Heh.');
@@ -149,8 +149,8 @@ var Default= {
 };
 
 var Devroom = {
-	music:function(){audioElement.src='http://vignette1.wikia.nocookie.net/undertale/images/a/a6/Mus_dogroom.ogg';},
-	image:function(){imageElement.src='http://vignette2.wikia.nocookie.net/undertale/images/0/05/Mysterious_Door_room.png';
+	music:function(){audioElement.src='/resources/Mus_dogroom.ogg';},
+	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
   d.body.style.backgroundColor='black';
   },
 	txt:function(){textElement.hidden=true;
