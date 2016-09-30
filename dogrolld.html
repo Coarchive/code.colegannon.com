@@ -31,19 +31,191 @@ display: block;
 <audio id='audio' autoplay loop></audio>
 <script>
 
+// V A R I A B L E S
+var timesVisited = 1+(+localStorage.getItem("dogRolled")),
+    currentTitle,
+    currentState,
+    d=document,
+    imageElement = d.getElementById('img'),
+    audioElement = d.getElementById('audio'),
+    textElement = d.getElementById('text');
+localStorage.setItem("dogRolled", String(timesVisited + 1));
+onload=function(){
+  if(localStorage.getItem('konamiSans')){
+    new Konami(function(){localStorage.setItem('sansSpecial',1);});
+  }else{
+    new Konami(function(){location='//rick.amigocraft.net';});
+  }
+};
+// F U N C T I O N S
+function setText(string){
+	textElement.innerHTML=string;
+}
+function getRandomNumber(n){
+    return Math.floor((Math.random() * n) + 1);
+}
+function trueReset() {
+   var r = ['dogRolled','dogTrolld','dogTold', 'devTools', 'devTold', 'sansSpecial', 'konamiSans'];
+   r.forEach(localStorage.removeItem, localStorage);
+}
+window.trueReset = trueReset;
 
-/*
- * Konami-JS ~
- * :: Now with support for touch events and multiple instances for
- * :: those situations that call for multiple easter eggs!
- * Code: https://github.com/snaptortoise/konami-js
- * Examples: http://www.snaptortoise.com/konami-js
- * Copyright (c) 2009 George Mandis (georgemandis.com, snaptortoise.com)
- * Version: 1.4.6 (3/2/2016)
- * Licensed under the MIT License (http://opensource.org/licenses/MIT)
- * Tested in: Safari 4+, Google Chrome 4+, Firefox 3+, IE7+, Mobile Safari 2.2.1 and Dolphin Browser
- */
+// S T A T E
+var danceOfDog = {
+    music:function(){
+			switch(getRandomNumber(9)){
+			    case 1:
+			        audioElement.src='/resources/DOD.ogg';
+			        audioElement.volume=0.6;
+			    break;
+			    case 2:
+			        audioElement.src="/resources/0.5.ogg";
+			        audioElement.volume=0.6;
+			    break;
+			    case 3:
+			        audioElement.src="/resources/1.ogg";
+			        audioElement.volume=0.6;
+			    break;
+			    case 4:
+			    case 5:
+			    case 6:
+					case 7:
+					case 8:
+					case 9:
+			        audioElement.src='/resources/Dogsong.ogg';
+							audioElement.playbackRate=Math.random()+0.6;
+			}
+		},
+    image:function(){imageElement.src='/resources/SmallAdog.gif';},
+	  txt:function(){setText(timesVisited);},
+		plugin:function(){},
+};
 
+
+// S A N S
+// F I N I S H E D
+var sans = {
+	music:function(){
+		if(!localStorage.getItem('sansSpecial')){
+			audioElement.src='/resources/sans.ogg';
+		}else{
+			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
+		}
+	},
+	image:function(){
+		imageElement.src='/resources/Sans.png';
+	},
+	txt:function(){
+    if (localStorage.getItem('devTold')) {
+      localStorage.setItem('konamiSans', 1);
+    }
+    if(timesVisited!=12){
+		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
+      setText('Hey Kid....');
+			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
+			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
+			setTimeout(function(){setText('You might find some eggs, even though it\'s not easter.');},15000);
+		  setTimeout(function(){setText('Let\'s play a game. . .');},18000);
+		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
+			setTimeout(function(){setText('Select normal when you are ready.');
+			localStorage.setItem('devTold','true');
+      window.location='https://jcw87.github.io/c2-sans-fight/';},38000);
+		} else if(localStorage.getItem('dogTrolld')){
+        if(!localStorage.getItem('dogTold')){
+        setText('Heh.');
+        setTimeout(function(){setText('I see you got ricked...');},3000);
+        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogTrolld';},6000);
+      }
+    }else{
+      setText(timesVisited);
+    }
+  }else{
+    setTimeout(function(){location.reload();},5000);
+    localStorage.removeItem('dogRolled');
+    setText(timesVisited);
+  }
+  }
+};
+
+
+var Asriel = {
+	music:function(){
+    audioElement.src='/resources/menu6.ogg';
+  },
+	image:function(){
+    imageElement.src='/resources/AsrielDreemur.gif';
+    d.body.style.backgroundColor='black';
+  },
+	txt:function(){},
+  };
+
+var Default= {
+  music:function(){},
+  image:function(){},
+  txt:function(){}
+};
+
+var Devroom = {
+	music:function(){
+    audioElement.volume=0.6;
+    audioElement.playbackRate=Math.random()+0.6;
+    audioElement.src='/resources/Mus_dogroom.ogg';},
+	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
+  d.body.style.backgroundColor='black';
+  },
+	txt:function(){textElement.hidden=true;
+    //Yes, I know it's not text
+  	localStorage.setItem('devTools','true');
+  },
+};
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+//Website Code
+(function stateDeterminer(){
+	switch (timesVisited) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		  currentState=danceOfDog;
+		break;
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+    case 12:
+    currentState=sans;
+    break;
+		default:
+		  currentState=Asriel;
+	}
+})();
+function stateWriter(state){
+	state.music();
+  state.image();
+	state.txt();
+  currentState=state;
+}
+stateWriter(currentState);
+window.currentState = currentState;
+var changeTitleInterval = setInterval(function titleChanger(){
+  if(currentTitle){d.title='Rekt';currentTitle=0;}else{d.title='Get';currentTitle=1;}
+},500);
+window.timesVisited = timesVisited;
+
+// D E V T O O L S  L I S T E N E R
+var element=new Image();Object.defineProperty(element,"id",{get:function(){
+  if(currentState!=Devroom){stateWriter(Devroom);}
+}});console.log("%cHello",element);
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 var Konami = function (callback) {
 	var konami = {
 		addEvent: function (obj, type, fn, ref_obj) {
@@ -137,189 +309,6 @@ var Konami = function (callback) {
 
 	return konami;
 };
-
-
-
-// V A R I A B L E S
-var timesVisited = Number(localStorage.getItem("dogRolled")),
-    currentTitle,
-    currentState,
-    d=document,
-    imageElement = d.getElementById('img'),
-    audioElement = d.getElementById('audio'),
-    textElement = d.getElementById('text');
-
-onload=function(){
-  if(localStorage.getItem('konamiSans')){
-    new Konami(function(){localStorage.setItem('sansSpecial');});
-  }else{
-    new Konami(function(){location='//rick.amigocraft.net';});
-  }
-};
-// F U N C T I O N S
-function setText(string){
-	textElement.innerHTML=string;
-}
-function getRandomNumber(n){
-    return Math.floor((Math.random() * n) + 1);
-}
-function trueReset() {
-   var r = ['dogRolled','dogTrolld','dogTold', 'devTools', 'devTold', 'sansSpecial', 'konamiSans'];
-   r.forEach(localStorage.removeItem, localStorage);
-}
-window.trueReset = trueReset;
-
-// S T A T E
-var danceOfDog = {
-    music:function(){
-			switch(getRandomNumber(9)){
-			    case 1:
-			        audioElement.src='/resources/DOD.ogg';
-			        audioElement.volume=0.6;
-			    break;
-			    case 2:
-			        audioElement.src="/resources/0.5.ogg";
-			        audioElement.volume=0.6;
-			    break;
-			    case 3:
-			        audioElement.src="/resources/1.ogg";
-			        audioElement.volume=0.6;
-			    break;
-			    case 4:
-			    case 5:
-			    case 6:
-					case 7:
-					case 8:
-					case 9:
-			        audioElement.src='/resources/Dogsong.ogg';
-							audioElement.playbackRate=Math.random()+0.6;
-			}
-		},
-    image:function(){imageElement.src='/resources/SmallAdog.gif';},
-	  txt:function(){setText(timesVisited);},
-		plugin:function(){},
-};
-
-
-// S A N S
-// F I N I S H E D
-var sans = {
-	music:function(){
-		if(!localStorage.getItem('sansSpecial')){
-			audioElement.src='/resources/sans.ogg';
-		}else{
-			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
-		}
-	},
-	image:function(){
-		imageElement.src='/resources/Sans.png';
-	},
-	txt:function(){
-    if (localStorage.getItem('devTold')) {
-      localStorage.setItem('konamiSans', 1);
-    }
-    if(timesVisited!=12){
-		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
-			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
-			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
-			setTimeout(function(){setText('You might find some eggs, even though it\'s not easter.');},15000);
-		  setTimeout(function(){setText('Let\'s play a game. . .');},18000);
-		  setTimeout(function(){setText('"Z" is [okay] "X" is [back]. Use the arrow keys to move.');},23000);
-			setTimeout(function(){setText('Select normal when you are ready.');
-			localStorage.setItem('devTold','true');
-      window.location='https://jcw87.github.io/c2-sans-fight/';},38000);
-		} else if(localStorage.getItem('dogTrolld')){
-        if(!localStorage.getItem('dogTold')){
-        setText('Heh.');
-        setTimeout(function(){setText('I see you got ricked...');},3000);
-        setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogTrolld';},6000);
-      }
-    }else{
-      setText(timesVisited);
-    }
-  }else{
-    setTimeout(function(){location.reload();},5000);
-    localStorage.removeItem('dogRolled');
-    setText(timesVisited);
-  }
-  }
-};
-
-
-var Asriel = {
-	music:function(){
-    audioElement.src='/resources/menu6.ogg';
-  },
-	image:function(){
-    imageElement.src='/resources/AsrielDreemur.gif';
-    d.body.style.backgroundColor='black';
-  },
-	txt:function(){},
-  };
-
-var Default= {
-  music:function(){},
-  image:function(){},
-  txt:function(){}
-};
-
-var Devroom = {
-	music:function(){audioElement.src='/resources/Mus_dogroom.ogg';},
-	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
-  audioElement.playbackRate=Math.random()+0.6;
-  d.body.style.backgroundColor='black';
-  },
-	txt:function(){textElement.hidden=true;
-    //Yes, I know it's not text
-  	localStorage.setItem('devTools','true');
-  },
-};
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-
-//Website Code
-(function stateDeterminer(){
-	switch (timesVisited) {
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-		case 7:
-		  currentState=danceOfDog;
-		break;
-		case 8:
-		case 9:
-		case 10:
-		case 11:
-    case 12:
-		  currentState=sans;
-		break;
-		default:
-		  currentState=Asriel;
-	}
-})();
-function stateWriter(state){
-	state.music();
-  state.image();
-	state.txt();
-  currentState=state;
-}
-stateWriter(currentState);
-localStorage.setItem("dogRolled", String(timesVisited + 1));
-window.currentState = currentState;
-var changeTitleInterval = setInterval(function titleChanger(){
-  if(currentTitle){d.title='Rekt';currentTitle=0;}else{d.title='Get';currentTitle=1;}
-},500);
-window.timesVisited = timesVisited;
-
-// D E V T O O L S  L I S T E N E R
-var element=new Image();Object.defineProperty(element,"id",{get:function(){
-  if(currentState!=Devroom){stateWriter(Devroom);}
-}});console.log("%cHello",element);
 </script>
 </body>
 </html>
