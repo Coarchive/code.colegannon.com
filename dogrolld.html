@@ -32,7 +32,7 @@ display: block;
 <script>
 
 // V A R I A B L E S
-var timesVisited = 1+(+localStorage.getItem("dogRolled")),
+var timesVisited = 1+Number(localStorage.getItem("dogRolled")),
     currentTitle,
     currentState,
     d=document,
