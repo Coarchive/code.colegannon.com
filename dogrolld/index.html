@@ -43,9 +43,7 @@ var currentTitle,
     audioElement.volume=0.4;
 localStorage.setItem("dogRolled", timesVisited);
 setTimeout(function(){if(localStorage.getItem('konamiSans')){
-  new Konami(function(){localStorage.setItem('sansSpecial',1);
-  audioElement.src='dogrolld/resources/Energy Drink.mp3';
-});
+  new Konami(function(){localStorage.setItem('sansSpecial',1); console.log('Hmm..');});
 }else{
   new Konami(function(){location='/dogtrolld';});
 }},5000);
