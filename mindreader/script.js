@@ -42,7 +42,7 @@ navigator.getBattery().then(function (batteryManager) {
     } else {
       battery.time = batteryManager.dischargingTime;
     }
-  }
+  };
 }, function (err) {
   console.error('Failed to get Battery');
   console.error(err);
