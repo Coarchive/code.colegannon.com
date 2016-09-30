@@ -44,11 +44,11 @@ var timesVisited = Number(localStorage.getItem("dogRolled")),
 
 d.getElementById('koanmi').onload=function(){
   if(localStorage.getItem('konamiSans')){
-    new Konami(function(){localStorage.setItem('sansSpecial');})
+    new Konami(function(){localStorage.setItem('sansSpecial');});
   }else{
-    new Konami(function(){location='//rick.amigocraft.net'})
+    new Konami(function(){location='//rick.amigocraft.net';});
   }
-}
+};
 // F U N C T I O N S
 function setText(string){
 	textElement.innerHTML=string;
