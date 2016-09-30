@@ -149,7 +149,7 @@ var timesVisited = Number(localStorage.getItem("dogRolled")),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
 
-d.getElementById('konami').onload=function(){
+onload=function(){
   if(localStorage.getItem('konamiSans')){
     new Konami(function(){localStorage.setItem('sansSpecial');});
   }else{
