@@ -159,6 +159,7 @@ var Default= {
 var Devroom = {
 	music:function(){audioElement.src='/resources/Mus_dogroom.ogg';},
 	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
+  audioElement.playbackRate=Math.random()+0.6;
   d.body.style.backgroundColor='black';
   },
 	txt:function(){textElement.hidden=true;
