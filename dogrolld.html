@@ -27,7 +27,6 @@ display: block;
 </head>
 <body>
 <img id='img'>
-<img id='XD'>
 <div id='text'></div>
 <audio id='audio' autoplay loop></audio>
 <script>
@@ -100,7 +99,8 @@ var sans = {
 			audioElement.src='/resources/sans.ogg';
 		}else{
 			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
-      setTimeout(function(){var xd = d.getElementById('XD'); xd.src='/resources/Sans.png'; xd.marginTop='100px';},15000);
+      var xd = d.createElement('img'); xd.style.opacity=0; xd.src='/resources/Sans.png'; document.body.appendChild(xd);
+      setTimeout(function(){xd.style.opacity=1;},15000);
 		}
 	},
 	image:function(){
