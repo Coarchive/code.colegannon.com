@@ -16,7 +16,7 @@ body{
   margin-top: 70px;
   text-align: center;
 }
-#img{
+img{
 display: block;
   margin-right: auto;
   margin-left: auto;
@@ -27,6 +27,7 @@ display: block;
 </head>
 <body>
 <img id='img'>
+<img id='XD'>
 <div id='text'></div>
 <audio id='audio' autoplay loop></audio>
 <script>
@@ -40,6 +41,7 @@ var currentTitle,
     imageElement = d.getElementById('img'),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
+    audioElement.volume=0.6;
 localStorage.setItem("dogRolled", timesVisited);
 onload=function(){
   if(localStorage.getItem('konamiSans')){
@@ -67,15 +69,12 @@ var danceOfDog = {
 			switch(getRandomNumber(9)){
 			    case 1:
 			        audioElement.src='/resources/DOD.ogg';
-			        audioElement.volume=0.6;
 			    break;
 			    case 2:
 			        audioElement.src="/resources/0.5.ogg";
-			        audioElement.volume=0.6;
 			    break;
 			    case 3:
 			        audioElement.src="/resources/1.ogg";
-			        audioElement.volume=0.6;
 			    break;
 			    case 4:
 			    case 5:
@@ -101,6 +100,7 @@ var sans = {
 			audioElement.src='/resources/sans.ogg';
 		}else{
 			audioElement.src=(getRandomNumber(7)<3?'/resources/megalovania.ogg':'/resources/SongThatMightPlayWhenYouFightSans.ogg');
+      setTimeout(function(){var xd = d.getElementById('XD'); xd.src='/resources/Sans.png'; xd.marginTop='100px';},15000);
 		}
 	},
 	image:function(){
@@ -163,7 +163,7 @@ var Default= {
 
 var Devroom = {
 	music:function(){
-    audioElement.volume=0.6;
+
     audioElement.playbackRate=Math.random()+0.6;
     audioElement.src='/resources/Mus_dogroom.ogg';},
 	image:function(){imageElement.src='/resources/Mysterious_Door_room.png';
