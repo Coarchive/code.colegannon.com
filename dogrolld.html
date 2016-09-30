@@ -100,6 +100,7 @@ var sans = {
     if (localStorage.getItem('devTold')) {
       localStorage.setItem('konamiSans', 1);
     }
+    if(timesVisited!=12){
 		if(localStorage.getItem('devTools')&&!localStorage.getItem('devTold')){
 			setTimeout(function(){setText('I see you were messing with the dev tools. . .');},5000);
 			setTimeout(function(){setText("Try entering: \" location='dogtrolld'; \"");},9000);
@@ -114,12 +115,14 @@ var sans = {
         setText('Heh.');
         setTimeout(function(){setText('I see you got ricked...');},3000);
         setTimeout(function(){setText('Welp, here\'s to another one!');window.location='dogTrolld';},6000);
-      }else{
-        localStorage.setItem('konamiSans');
       }
     }else{
       setText(timesVisited);
     }
+  }else{
+    setTimeout(function(){location.reload();},5000);
+    setText(timesVisited);
+  }
   }
 };
 
@@ -173,6 +176,7 @@ var Devroom = {
 		case 9:
 		case 10:
 		case 11:
+    case 12:
 		  currentState=sans;
 		break;
 		default:
