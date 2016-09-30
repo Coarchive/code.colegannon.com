@@ -40,7 +40,7 @@ var currentTitle,
     imageElement = d.getElementById('img'),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
-localStorage.setItem("dogRolled", timesVisited + 1);
+localStorage.setItem("dogRolled", timesVisited);
 onload=function(){
   if(localStorage.getItem('konamiSans')){
     new Konami(function(){localStorage.setItem('sansSpecial',1);});
