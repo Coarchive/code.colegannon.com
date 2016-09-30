@@ -32,14 +32,15 @@ display: block;
 <script>
 
 // V A R I A B L E S
-var timesVisited = 1+Number(localStorage.getItem("dogRolled")),
-    currentTitle,
+var timesVisited = 1+Number(localStorage.getItem("dogRolled"));
+console.log(timesVisited);
+var currentTitle,
     currentState,
     d=document,
     imageElement = d.getElementById('img'),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
-localStorage.setItem("dogRolled", String(timesVisited + 1));
+localStorage.setItem("dogRolled", timesVisited + 1);
 onload=function(){
   if(localStorage.getItem('konamiSans')){
     new Konami(function(){localStorage.setItem('sansSpecial',1);});
