@@ -108,6 +108,7 @@ var sans = {
 		imageElement.src='/dogrolld/resources/Sans.png';
 	},
 	txt:function(){
+    setText(timesVisited);
     if (localStorage.getItem('devTold')) {
       localStorage.setItem('konamiSans', 1);
     }
@@ -130,8 +131,6 @@ var sans = {
         localStorage.setItem('dogTold',1);
         window.location='/dogtrolld';},6000);
       }
-    }else{
-      setText(timesVisited);
     }
   }else{
     setText('Okay, eleven was fine but twelve,');
