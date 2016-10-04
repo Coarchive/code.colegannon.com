@@ -136,11 +136,12 @@ var sans = {
       }
     }
   }else{
-    setText('Okay, eleven was fine but twelve,');
-    setTimeout(function(){setText('Twelve is just an excessive number.');},5000);
+    setTimeout(function(){setText('Sorry, eleven is the limit on head dogs');},2700);
+    setTimeout(function(){setText('Sorry, eleven is the limit for page reloads');},3500);
+    setTimeout(function(){setText('Eleven was fine but twelve is just an excessive number.');},7000);
     // EKCS DEE ^--^
-    setTimeout(function(){setText('Do you think that I can count that high on my fingers?');},8200);
-    setTimeout(function(){location.reload();},10000);
+    setTimeout(function(){setText('I mean, do you think that I can count that high on my fingers?');},11200);
+    setTimeout(function(){location.reload();},13000);
     localStorage.removeItem('dogRolled');
     setText(timesVisited);
   }
