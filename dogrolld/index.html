@@ -45,7 +45,6 @@ var currentTitle,
     imageElement = d.getElementById('img'),
     audioElement = d.getElementById('audio'),
     textElement = d.getElementById('text');
-    audioElement.volume=0.7;
 localStorage.setItem("dogRolled", timesVisited);
 setTimeout(function(){if(localStorage.getItem('konamiSans')){
   new Konami(function(){localStorage.setItem('sansSpecial',1); console.log('Hmm..');});
