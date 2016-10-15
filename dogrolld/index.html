@@ -38,7 +38,6 @@ display: block;
 <script>
 // V A R I A B L E S
 var timesVisited = 1+Number(localStorage.getItem("dogRolled"));
-console.log(timesVisited);
 var currentTitle,
     currentState,
     d=document,
@@ -56,7 +55,6 @@ function setTimesVisited(srting){
   localStorage.setItem('dogRolled',srting);
 }
 function setText(string){
-  console.log(string);
 	textElement.innerHTML=string;
 }
 function getRandomNumber(n){
@@ -71,17 +69,18 @@ window.trueReset = trueReset;
 // S T A T E
 var danceOfDog = {
     music:function(){
+	    console.log('The function called');
 			switch(getRandomNumber(9)){
 			    case 1:
-              console.log('Dance o Dog');
+              			console.log('Dance o Dog');
 			        audioElement.src='/dogrolld/resources/Dance of Dog.ogg';
 			    break;
 			    case 2:
-              console.log('Dance o Dog 2');
+              			console.log('Dance o Dog 2');
 			        audioElement.src="/dogrolld/resources/Dance of Dog1.ogg";
 			    break;
 			    case 3:
-              console.log('Dance o Dog 0.5');
+              			console.log('Dance o Dog 0.5');
 			        audioElement.src="/dogrolld/resources/Dance of Dog5.ogg";
 			    break;
 			    case 4:
