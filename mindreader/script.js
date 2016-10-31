@@ -1,6 +1,6 @@
 /*
 TODO:
-+ Permissons
++ Permissons - Done
 + Screen Stuff
 + Battery - Done
 + Stats of website
@@ -111,7 +111,7 @@ function permission(name) {
 //  + geolocation
 permission("geolocation");
 //  + notifications
-permission('notifications");
+permission('notifications');
 //  + push
 permission('push');
 //  + midi
