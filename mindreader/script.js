@@ -7,8 +7,8 @@ TODO:
 + OS - Done
 + Geolocation
 + Notifications
-+ Online
-+ Type of connection
++ Online - Done
++ Type of connection - Done
 + Language
 + Platform
 + Cookies
@@ -116,3 +116,13 @@ permission('notifications');
 permission('push', true);
 //  + midi
 permission('midi');
+
+var connection = {};
+connection.onLine = navigator.onLine;
+connection.type = navigator.connection.type;
+navigator.connection.onchange = function () {
+  connection.onLine = navigator.onLine;
+}
+navigator.connection.ontypechange = function () {
+  connection.type = navigator.connection.type;
+}
