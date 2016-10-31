@@ -85,8 +85,8 @@ var theScreen = {
 };
 
 var permissions = {};
-function permission(name) {
-  navigator.permissions.query({name: name}).then(function (result) {
+function permission(name, uvo) {
+  navigator.permissions.query({name: name, userVisibleOnly:uvo}).then(function (result) {
     switch (result.state) {
       case "granted":
         permissions[name] = true;
@@ -113,6 +113,6 @@ permission("geolocation");
 //  + notifications
 permission('notifications');
 //  + push
-permission('push');
+permission('push', true);
 //  + midi
 permission('midi');
