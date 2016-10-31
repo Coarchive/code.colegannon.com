@@ -85,12 +85,34 @@ var theScreen = {
 };
 
 var permissions = {};
+function permission(name) {
+  navigator.permissions.query({name: name}).then(function (result) {
+    switch (result.state) {
+      case "granted":
+        permissions[name] = true;
+        break;
+      case "denied":
+        permissions[name] = false;
+        break;
+      case "prompt":
+        permissions[name] = null;
+        break;
+      default:
+        console.error("Unknown state " + result.state);
+        break;
+    }
+  }, function (err) {
+    console.error("Failed to get permission '" + name + "'.");
+    console.error(err);
+  });
+}
 
-navigator.permissions;
-/*
-Permissions:
-+ geolocation
-+ notifications
-+ push
-+ midi
-*/
+//Permissions:
+//  + geolocation
+permission("geolocation");
+//  + notifications
+permission('notifications");
+//  + push
+permission('push');
+//  + midi
+permission('midi');
