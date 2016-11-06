@@ -97,16 +97,23 @@
         function test(){
             var btn = document.getElementById("q").style;
             btn.left='10%';
+            btn.width='3vw'
+            btn.height='3vw'
             btn.backgroundColor='#FF4081';
             setTimeout(()=>{
             var temp=foo.value;
-            preWindow=open();
-            preWindow.document.open();
-            preWindow.document.write(temp);
-            preWindow.document.close();
-            },700)
+            if(!window.preWindow&&window.preWindow.closed){
+                window.preWindow=open();
+            };
+            window.preWindow.document.open();
+            window.preWindow.document.write(temp);
+            window.preWindow.document.close();
+            window.preWindow.focus();
+            },600)
             setTimeout(()=>{
                 btn.left='90%';
+                btn.width='6vw'
+                btn.height='6vw'
                 btn.backgroundColor='#FF5722';
             },3000)
         };
