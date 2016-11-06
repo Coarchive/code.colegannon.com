@@ -100,16 +100,15 @@
             btn.width='3vw'
             btn.height='3vw'
             btn.backgroundColor='#FF4081';
-            setTimeout(()=>{
             var temp=foo.value;
-            if(!window.preWindow&&window.preWindow.closed){
+            if(window.preWindow&&!window.preWindow.closed){}else{
                 window.preWindow=open();
             };
             window.preWindow.document.open();
             window.preWindow.document.write(temp);
             window.preWindow.document.close();
+            temp==''&&window.preWindow.location='colegannon.com/dogrolld';
             window.preWindow.focus();
-            },600)
             setTimeout(()=>{
                 btn.left='90%';
                 btn.width='6vw'
