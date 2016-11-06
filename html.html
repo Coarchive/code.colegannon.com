@@ -107,7 +107,7 @@
             window.preWindow.document.open();
             window.preWindow.document.write(temp);
             window.preWindow.document.close();
-            temp==''&&window.preWindow.location='colegannon.com/dogrolld';
+            if(temp==''){window.preWindow.location='colegannon.com/dogrolld'};
             window.preWindow.focus();
             setTimeout(()=>{
                 btn.left='90%';
