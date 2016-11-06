@@ -99,12 +99,11 @@
             btn.left='10%';
             btn.backgroundColor='#FF4081';
             setTimeout(()=>{
-            var temp=foo.value,
-            preWindow=open("");
+            var temp=foo.value;
+            preWindow=open();
             preWindow.document.open();
             preWindow.document.write(temp);
             preWindow.document.close();
-                
             },700)
             setTimeout(()=>{
                 btn.left='90%';
