@@ -96,10 +96,6 @@
         };
         function test(){
             var btn = document.getElementById("q").style;
-            btn.left='10%';
-            btn.width='3vw'
-            btn.height='3vw'
-            btn.backgroundColor='#FF4081';
             var temp=foo.value;
             if(window.preWindow&&!window.preWindow.closed){}else{
                 window.preWindow=open();
@@ -109,12 +105,17 @@
             window.preWindow.document.close();
             if(temp==''){window.preWindow.location='colegannon.com/dogrolld'};
             window.preWindow.focus();
+            setTimeout(()=>{btn.left='10%';
+            btn.width='3vw'
+            btn.height='3vw'
+            btn.backgroundColor='#FF4081';},5)
+
             setTimeout(()=>{
                 btn.left='90%';
                 btn.width='6vw'
                 btn.height='6vw'
                 btn.backgroundColor='#FF5722';
-            },3000)
+            },2000)
         };
         var dogd;
         function flyDog(){
