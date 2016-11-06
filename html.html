@@ -1,53 +1,112 @@
 <html>
     <head>
-<link href="https://fonts.googleapis.com/css?family=Raleway:600,700" rel="stylesheet">
         <style>
-            .centered {
-              position: fixed;
-              top: 48%;
-              left: 50%;
-              transform: translate(-50%, -50%);
+            @import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
+            body {
+                margin:0px;
+                font-family:'Roboto', sans-serif;
             }
             .textarea {
-                height: 140;
-                width:  300;
-                transition: all 700ms;
+                z-index:0;
+                position:fixed;
+                display:block;
+                height: 100%;
+                width: 100%;
                 color:black;
-                border:2px solid;
+                resize:none;
+                font-size:14px;
             }
             button {
-              position: fixed;
-              top: 67%;
-              display: inline-block;
-              background-color: #25A0EF;
-              border: 2px solid #196EA5;
-              left: 50%;
-              color:white;
-              font-size:17;
-              width: 144;
-              height: 50;
-              transform: translate(-50%, -50%);
-              transition: all 500ms;
+                left:80%;
+                border-radius:100%;
+                z-index:2;
+                text-align:center;
+                position: absolute;
+                background-color: #448AFF;
+                border: none;
+                color:white;
+                font-size:1vw;
+                width: 4vw;
+                height: 4vw;
+                transform: translate(-50%, -50%);
+                transition: all 500ms;
+                cursor: pointer;
+                box-shadow: 0px 0px 10px #888888;  
             }
             button:hover{
-                border: 3px solid grey;
-                background-color: teal;
-                width: 300;
+                width: 6vw;
+                height: 6vw;
+            }
+            *:focus {
+                outline: none;
+            }
+            .status-bar {
+                z-index:1;
+                background-color:#C2185B;
+                height:15px;
+            }
+            .title {
+                z-index:3;
+                background-color:#E91E63;
+                height:20%;
+                color:white;
+                font-weight:300;
+                font-size:6vw;
+                letter-spacing:1px;
+                box-sizing:border-box;
+                justify-content: center;
+                align-items: center;
+                display:flex;
+                box-shadow: 0px 3px 3px #888888;
+            }
+            img {
+                top:20;
+                left:0.7%;
+                position:absolute;
+                width:4vw;
+                transition: all 1s;
             }
         </style>
     </head>
     <body>
-        <textarea id='foo' class='centered textarea'></textarea>
-        <button onclick='test()'>Test</button>
+        <div class='status-bar'></div>
+        <div class='title'>
+            <img id='dog' onmouseover='flyDog()' src='https://raw.githubusercontent.com/Arcanehood/arcanehood.github.io/master/dogrolld/resources/Annoying-Dog.gif'>
+            <span>
+                HTML TESTER
+            </span>
+        </div>
+        <button onclick='test()'>OK</button>
+        <textarea id='foo' class='textarea'></textarea>
         <script>
         document.title='t3$teR';
-        function test(){
-            var temp=document.getElementById('foo').value;
-            var preWindow = open(""); 
-            preWindow.document.open(); 
-            preWindow.document.write(temp); 
-            preWindow.document.close(); 
+        var foo=document.getElementById("foo");
+        foo.onkeydown=function(e){
+            e.preventDefault();
+            if(e.key=="Tab"){
+                e.preventDefault();
+                //addFourSpaces();
+            }
         };
+        function test(){
+            var temp=foo.value,
+            preWindow=open("");
+            preWindow.document.open();
+            preWindow.document.write(temp);
+            preWindow.document.close();
+        };
+        var dogd;
+        function flyDog(){
+            if(!dogd){
+            document.getElementById('dog').style.left='95%';
+            document.getElementsByClassName('title')[0].innerHTML='dogrolld.';
+            dogd=true;
+            }else{
+            document.getElementsByClassName('title')[0].innerHTML='HTML TESTER';
+            document.getElementById('dog').style.left='0.7%';
+            dogd=false;
+            }
+        }
         </script>
     </body>
 </html>
