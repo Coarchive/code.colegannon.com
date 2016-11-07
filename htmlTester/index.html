@@ -3,6 +3,112 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link rel='shortcut icon' href='htmlfavicon.svg' type='image/svg'/>
+              <script>/*
+ * Konami-JS ~ 
+ * :: Now with support for touch events and multiple instances for 
+ * :: those situations that call for multiple easter eggs!
+ * Code: https://github.com/snaptortoise/konami-js
+ * Examples: http://www.snaptortoise.com/konami-js
+ * Copyright (c) 2009 George Mandis (georgemandis.com, snaptortoise.com)
+ * Version: 1.4.6 (3/2/2016)
+ * Licensed under the MIT License (http://opensource.org/licenses/MIT)
+ * Tested in: Safari 4+, Google Chrome 4+, Firefox 3+, IE7+, Mobile Safari 2.2.1 and Dolphin Browser
+ */
+
+var Konami = function (callback) {
+	var konami = {
+		addEvent: function (obj, type, fn, ref_obj) {
+			if (obj.addEventListener)
+				obj.addEventListener(type, fn, false);
+			else if (obj.attachEvent) {
+				// IE
+				obj["e" + type + fn] = fn;
+				obj[type + fn] = function () {
+					obj["e" + type + fn](window.event, ref_obj);
+				}
+				obj.attachEvent("on" + type, obj[type + fn]);
+			}
+		},
+		input: "",
+		pattern: "38384040373937396665",
+		load: function (link) {
+			this.addEvent(document, "keydown", function (e, ref_obj) {
+				if (ref_obj) konami = ref_obj; // IE
+				konami.input += e ? e.keyCode : event.keyCode;
+				if (konami.input.length > konami.pattern.length)
+					konami.input = konami.input.substr((konami.input.length - konami.pattern.length));
+				if (konami.input == konami.pattern) {
+					konami.code(link);
+					konami.input = "";
+					e.preventDefault();
+					return false;
+				}
+			}, this);
+			this.iphone.load(link);
+		},
+		code: function (link) {
+			window.location = link
+		},
+		iphone: {
+			start_x: 0,
+			start_y: 0,
+			stop_x: 0,
+			stop_y: 0,
+			tap: false,
+			capture: false,
+			orig_keys: "",
+			keys: ["UP", "UP", "DOWN", "DOWN", "LEFT", "RIGHT", "LEFT", "RIGHT", "TAP", "TAP"],
+			code: function (link) {
+				konami.code(link);
+			},
+			load: function (link) {
+				this.orig_keys = this.keys;
+				konami.addEvent(document, "touchmove", function (e) {
+					if (e.touches.length == 1 && konami.iphone.capture == true) {
+						var touch = e.touches[0];
+						konami.iphone.stop_x = touch.pageX;
+						konami.iphone.stop_y = touch.pageY;
+						konami.iphone.tap = false;
+						konami.iphone.capture = false;
+						konami.iphone.check_direction();
+					}
+				});
+				konami.addEvent(document, "touchend", function (evt) {
+					if (konami.iphone.tap == true) konami.iphone.check_direction(link);
+				}, false);
+				konami.addEvent(document, "touchstart", function (evt) {
+					konami.iphone.start_x = evt.changedTouches[0].pageX;
+					konami.iphone.start_y = evt.changedTouches[0].pageY;
+					konami.iphone.tap = true;
+					konami.iphone.capture = true;
+				});
+			},
+			check_direction: function (link) {
+				x_magnitude = Math.abs(this.start_x - this.stop_x);
+				y_magnitude = Math.abs(this.start_y - this.stop_y);
+				x = ((this.start_x - this.stop_x) < 0) ? "RIGHT" : "LEFT";
+				y = ((this.start_y - this.stop_y) < 0) ? "DOWN" : "UP";
+				result = (x_magnitude > y_magnitude) ? x : y;
+				result = (this.tap == true) ? "TAP" : result;
+
+				if (result == this.keys[0]) this.keys = this.keys.slice(1, this.keys.length);
+				if (this.keys.length == 0) {
+					this.keys = this.orig_keys;
+					this.code(link);
+				}
+			}
+		}
+	}
+
+	typeof callback === "string" && konami.load(callback);
+	if (typeof callback === "function") {
+		konami.code = callback;
+		konami.load();
+	}
+
+	return konami;
+};
+</script>
         <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
             body {
@@ -23,6 +129,7 @@
             }
             button {
                 left:90%;
+                background-color: #FF5722; 
                 border-radius:100%;
                 z-index:2;
                 text-align:center;
@@ -39,9 +146,9 @@
                 animation-iteration-count: infinite;
             }
             @keyframes breath {
-                0%   {background-color: #FF5722; width:56px; height:56px;}
-                50%  {width:80px; height:80px; background-color:#FF4824;}
-                100% {background-color: #FF5722; width:56px; height:56px;}
+                0%   {width:56px; height:56px;}
+                50%  {width:80px; height:80px;}
+                100% {width:56px; height:56px;}
             }
             button:hover{
                 width: 9vw;
@@ -81,27 +188,57 @@
             .wrench:hover {
                 transform:rotate(90deg);
             }
+            input {
+                display:none;
+                pAdDInG:9;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
         </style>
     </head>
     <body>
         <audio id='audio' src='https://raw.githubusercontent.com/Arcanehood/rerun-whiterack/master/Barkarkarkarkark.mp3'></audio>
-        <div class='status-bar'></div>
-        <div class='title'>
+        <div id='1' class='status-bar'></div>
+        <div id='2' class='title'>
+            <i onclick='closeMenu()' class='wrench material-icons'>build</i>
             <span>
                 HTML TESTER
             </span>
+            <input id='a'>
         </div>
         <button id='q' onclick='test()'><i class="material-icons">done</i>
 </button>
         <textarea id='foo' class='textarea'></textarea>
         <script>
+            var light;
+            function parseCstm(ste){
+                var c = ste.split(';');
+                document.getElementById('1').style.backgroundColor=c[0];
+                document.getElementById('2').style.backgroundColor=c[1];
+                document.getElementById('q').style.backgroundColor=c[2];
+                light=c[3];
+                document.body.style.color=c[4];
+            }
+            var g;
+            if(gd=localStorage.getItem('hmtltseter')){
+                parseCstm(gd);
+            }
+        </script>
+        <script>
+                    if (!String.prototype.splice) {
+                String.prototype.splice = function(start, delCount, newSubStr) {
+                return this.slice(0, start) + newSubStr + this.slice(start + Math.abs(delCount));
+                };
+            }
         var ad = document.getElementById('audio');
         document.title='HTML Tester';
         var foo=document.getElementById("foo");
         foo.onkeydown=function(e){
             if(e.key=="Tab"){
                 e.preventDefault();
-                //addFourSpaces();
+                var orgin;
+                foo.value=foo.value.splice(orgin=foo.selectionStart,0,'    ')
+                foo.selectionStart=foo.selectionEnd=orgin+4;
             }
         };
         function test(){
@@ -116,30 +253,51 @@
             window.preWindow.document.close();
             if(temp==''){window.preWindow.location='/dogrolld'};
             window.preWindow.focus();
-            setTimeout(()=>{
+            window.onfocus=()=>{
             foo.select();
             btn.left='10%';
             btn.width='3vw'
             btn.height='3vw'
-            btn.backgroundColor='#FF4081';},5)
-
+            var ogra = btn.backgroundColor;
+            btn.backgroundColor=light;
             setTimeout(()=>{
                 btn.left='90%';
                 btn.width='6vw'
                 btn.height='6vw'
-                btn.backgroundColor='#FF5722';
-            },2000)
+                btn.backgroundColor=ogra;
+            },1000)
+            };
         };
-        var dogd;
-        function flyDog(){
-            if(!dogd){
-            document.getElementById('dog').style.left='95%';
-            dogd=true;
-            }else{
-            document.getElementById('dog').style.left='0.7%';
-            dogd=false;
+        mnu=false;
+        function openMenu(){
+            var title = document.getElementsByClassName('title')[0],tistl=title.style;
+            tistl.height='50%';
+            tistl.fontSize='3vw';
+            tistl.alignItems='flex-start';
+            tistl.justifyContent='flex-end';
+            tistl.padding='10';
+            tistl.top='30px'
+            document.getElementById('a').style.display='block';
+            mnu=true;
+        }
+        function closeMenu(){
+            if(mnu){
+                var title = document.getElementsByClassName('title')[0],tistl=title.style;
+                tistl.height='20%';
+                tistl.fontSize='6vw';
+                tistl.alignItems='center'
+                tistl.justifyContent='center';
+                tistl.padding='0';
+                var x = document.getElementById('a');
+                x.style.display='none';
+                if(x.value){
+                    parseCstm(x.value);
+                    localStorage.setItem('hmtltseter',a+';'+b+';'+c);
+                }
+                mnu=false;
             }
         }
+        new Konami(openMenu);
         </script>
     </body>
 </html>
