@@ -212,6 +212,7 @@ var Konami = function (callback) {
         <script>
             var light;
             function parseCstm(ste){
+		document.getElementById('a').value=ste;
                 var c = ste.split(';');
                 document.getElementById('1').style.backgroundColor=c[0];
                 document.getElementById('2').style.backgroundColor=c[1];
