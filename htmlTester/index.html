@@ -216,7 +216,7 @@
 		localStorage.setItem("htmltext", foo.value);
 	}
 	function load() {
-		foo.value = localStorage.setItem("htmltext");
+		foo.value = localStorage.getItem("htmltext");
 	}
 	function clear() {
 		localStorage.removeItem("htmltext");
@@ -225,7 +225,7 @@
 	if (localStorage.getItem('htmltext')) {
 		load();
 	}
-	setInterval(save, 1000);
+	foo.addEventListener('input', save);
         new Konami(openMenu);
         </script>
     </body>
