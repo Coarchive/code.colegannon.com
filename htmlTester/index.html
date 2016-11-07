@@ -102,6 +102,7 @@
             <input id='a'>
         </div>
         <button id='q' onclick='test()'><i class="material-icons">done</i>
+	<i class="material-icons" onclick="clear()">clear</i>
 </button>
         <textarea id='foo' class='textarea'></textarea>
         <script>
@@ -193,6 +194,20 @@
                 mnu=false;
             }
         }
+	function save() {
+		localStorage.setItem("htmltext", foo.value);
+	}
+	function load() {
+		foo.value = localStorage.setItem("htmltext");
+	}
+	function clear() {
+		localStorage.removeItem("htmltext");
+		foo.value = "";
+	}
+	if (localStorage.getItem('htmltext')) {
+		load();
+	}
+	setInterval(save, 1000);
         new Konami(openMenu);
         </script>
     </body>
