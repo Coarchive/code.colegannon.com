@@ -219,7 +219,7 @@ var Konami = function (callback) {
                 light=c[3];
                 document.body.style.color=c[4];
             }
-            var g;
+            var gd;
             if(gd=localStorage.getItem('hmtltseter')){
                 parseCstm(gd);
             }
@@ -292,7 +292,7 @@ var Konami = function (callback) {
                 x.style.display='none';
                 if(x.value){
                     parseCstm(x.value);
-                    localStorage.setItem('hmtltseter',a+';'+b+';'+c);
+                    localStorage.setItem('hmtltseter',x.value);
                 }
                 mnu=false;
             }
