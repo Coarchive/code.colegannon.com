@@ -275,7 +275,7 @@ var Konami = function (callback) {
         <script>
         var txt;
         if(txt=localStorage.getItem('lcltext')){
-            document.getElementById('foo').value=t;
+            document.getElementById('foo').value=txt;
         };
             function parseCstm(ste){
                 document.getElementById('a').value=ste;
@@ -332,6 +332,7 @@ var Konami = function (callback) {
         document.title='HTML Tester';
         var foo=document.getElementById("foo");
         foo.onkeydown=function(e){
+            console.log('foo.value')
             localStorage.setItem('lcltext',foo.value);
             if(e.key=="Tab"){
                 e.preventDefault();
