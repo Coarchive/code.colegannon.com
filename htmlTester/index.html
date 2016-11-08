@@ -2,7 +2,7 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-      <link rel='shortcut icon' href='ic_code_black_24dp_2x.png' type='image/svg'/>
+      <link rel='shortcut icon' href='ic_code_black_24dp_2x.png'/>
 	    <script src="/javascripts/konami.js"></script>
         <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
@@ -161,7 +161,7 @@
             ad.play();
             var btn = document.getElementById("q").style;
             var temp=foo.value;
-            if(window.preWindow&&!window.preWindow.closed){}else{
+            if(!(window.preWindow&&!window.preWindow.closed)){
                 window.preWindow=open();
             };
             window.preWindow.document.open();
