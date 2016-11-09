@@ -266,11 +266,11 @@
         }
 	function toggleMenu() {
 		if (mnu) {
+			closeMenu();
+		} else {
 			if (localStorage.getItem('mnuul')){
 				openMenu();
 			}
-		} else {
-			closeMenu();
 		}
 	}
         function closeMenu(){
