@@ -151,7 +151,7 @@
         <audio id='audio' src='https://raw.githubusercontent.com/Arcanehood/rerun-whiterack/master/Barkarkarkarkark.mp3'></audio>
         <div id='1' class='status-bar'></div>
         <div id='2' class='title'>
-            <i onclick='closeMenu()' class='wrench material-icons'>build</i>
+            <i onclick='toggleMenu()' class='wrench material-icons'>build</i>
             <span>
                 HTML TESTER
             </span>
@@ -271,6 +271,7 @@
 			}
 		} else {
 			closeMenu();
+		}
 	}
         function closeMenu(){
             if(mnu){
