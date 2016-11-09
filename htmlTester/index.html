@@ -209,6 +209,7 @@
                 document.getElementById('foo').value='';
                 localStorage.removeItem('lcltext');
                 localStorage.removeItem('hmtltseter');
+		localStorage.removeItem('mnuul');
                 location.reload();
             }
         </script>
@@ -252,6 +253,7 @@
         };
         mnu=false;
         function openMenu(){
+	    localStorage.setItem('mnuul',true);
             var title = document.getElementsByClassName('title')[0],tistl=title.style;
             tistl.height='50%';
             tistl.fontSize='3vw';
@@ -262,6 +264,14 @@
             document.getElementById('a').style.display='block';
             mnu=true;
         }
+	function toggleMenu() {
+		if (mnu) {
+			if (localStorage.getItem('mnuul')){
+				openMenu();
+			}
+		} else {
+			closeMenu();
+	}
         function closeMenu(){
             if(mnu){
                 var title = document.getElementsByClassName('title')[0],tistl=title.style;
