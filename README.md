@@ -1,2 +1,2 @@
 # The Arcanehood website
-Cole's Webpage
+The Code of Cole's Webpage
