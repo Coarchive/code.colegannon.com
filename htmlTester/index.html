@@ -164,21 +164,11 @@
     <textarea id='foo' class='textarea'></textarea>
         <script>
         var txt;
-	if(parseQuery(location.search).text){
-		document.getElementById('foo').value=decodeURIComponent(parseQuery(location.search + location.hash).text);
+	if(location.hash){
+		document.getElementById('foo').value=location.hash.slice(1);
 	}else if(txt=localStorage.getItem('lcltext')){
             document.getElementById('foo').value=txt;
         }
-		function parseQuery(q){
-			q=q.slice(1);
-			q=q.split('&');
-			var obj = {};
-			q.forEach(function (v) {
-				v=v.split('=');
-				obj[v[0]]=v[1];
-			})
-			return obj;
-		}
             function parseCstm(ste){
                 document.getElementById('a').value=ste;
                 var c = ste.split(';');
