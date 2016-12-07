@@ -1,2 +1,2 @@
-# The Arcanehood website
-The Code of Cole's Webpage
+# Cole's site is **Under Construction**
+## Joshua and I are working on this website.
