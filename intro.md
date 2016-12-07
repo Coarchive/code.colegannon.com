@@ -41,3 +41,6 @@ Let's simplify this and rename `_0xad9f` to `array`:
 var array=["Hello","World","log"];
 console[array[2]](array[0]+array[1])
 ```
+Hmm... That doesn't seem so confusing now. They're just getting the function `console.log` by doing `console['log']`. Then they just use the array to return `Hello` and `World`.
+
+So, that hardly took any time to pick apart. I really don't recommend using the Bad obfuscator because of how easy it is to decode. With that, let's move the [Chapter 1](ch1.md)
