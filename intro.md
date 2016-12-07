@@ -1,4 +1,4 @@
-# Javascript Obfuscated
+# How to make programmers scream
 
 ## Intro: Obfuscation, an explanation
 
