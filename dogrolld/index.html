@@ -47,7 +47,8 @@ var currentTitle,
     textElement = d.getElementById('text');
 localStorage.setItem("dogRolled", timesVisited);
 setTimeout(function(){if(localStorage.getItem('konamiSans')){
-  new Konami(function(){localStorage.setItem('sansSpecial',1); console.log('Hmm..');});
+  new Konami(function(){localStorage.setItem('sansSpecial',1);
+  console.log('You feel your sins crawling down your back. Or was that walking?');});
 }else{
   new Konami(function(){location='/dogtrolld';});
 }},5000);
@@ -140,10 +141,9 @@ var sans = {
     }
   }else{
     setText('Sorry, elven is the limit for page reloads');
-    setTimeout(function(){setText('I mean, twelve is just an excessive number.');},5000);
     // EKCS DEE ^--^
-    setTimeout(function(){setText('Do you really think that I can count that high on my fingers?');},10000);
-    setTimeout(function(){location.reload();},16000);
+    setTimeout(function(){setText('Do you really think that I can count that high on my fingers?');},50000);
+    setTimeout(function(){location.reload();},10000);
     localStorage.removeItem('dogRolled');
   }
   }
@@ -186,8 +186,11 @@ var Devroom = {
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*
+'The domain rick.amigocraft.net has expired RIP(Rick In People). This renders dogtrolld useless.
+Marcus and Cole are working though. Dogtrolld will exist once more!'
 if(getRandomNumber(7)==4){window.history.pushState({},"",'/dogtrolld');}
-
+*/
 //Website Code
 (function stateDeterminer(){
 	switch (timesVisited) {
