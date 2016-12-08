@@ -11,8 +11,8 @@ Something I'd like to make painfully clear is that encryption and obfuscation ar
 - [jjencode](http://utf-8.jp/public/jjencode.html)
 - [aaencode](http://utf-8.jp/public/aaencode.html)
 - [Closure Compiler](https://closure-compiler.appspot.com/home)
-- [Javascript Obfuscator(Not recommended)](https://javascriptobfuscator.com/)
-The reason I don't recommend the Javascript Obfuscator is because it's pretty easy to deobfuscate, see [here](/jsdf.md).
+- [Javascript Obfuscator](https://javascriptobfuscator.com/)
+  The reason I don't recommend this Javascript Obfuscator is because it's pretty easy to deobfuscate, see [here](/jsdf.md).
 - [Dan's Tools](http://www.danstools.com/javascript-obfuscate/index.php)
 
 The Closure Compiler is not only good for obfuscating but can optimise load times too.
