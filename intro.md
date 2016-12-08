@@ -1,5 +1,5 @@
 # How to make programmers scream
-By Cole Gannon, Marcus Luebke, & Joshua Bennett
+By Cole Gannon & Marcus Luebke.
 ### About this guide
 In this book, I'm going to teach you how to Obfuscate your **JAVASCRIPT** code **[MANUALLY](https://en.wikipedia.org/wiki/Manual).** If you're not looking to spend time manually obfuscating your code, then don't bother reading anymore of this book past this page. Just take a look at the links I reference below.
 ### Intro: Obfuscation, an explanation
