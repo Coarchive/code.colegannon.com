@@ -21,4 +21,18 @@ Let's simplify this and rename `_0xad9f` to `array`:
 var array=["Hello","World","log"];
 console[array[2]](array[0]+array[1])
 ```
-Hmm... That doesn't seem so confusing now. It's just getting the function `console.log` by doing `console['log']`. Then it's just using the array to return `Hello` and `World`.
+That's not to dificult to understand.
+```Javascript
+console['log']
+```
+returns
+```Javascript
+function log() { [native code] }
+```
+Then we get the input.
+```Javascript
+console['log']('Hello'+'World');
+//Same as
+console.log('Hello'+'World');
+//Except there are three more characters
+```
