@@ -21,7 +21,7 @@ Let's simplify this and rename `_0xad9f` to `array`:
 var array=["Hello","World","log"];
 console[array[2]](array[0]+array[1])
 ```
-That's not to dificult to understand.
+That's not to difficult to understand.
 ```Javascript
 console['log']
 ```
