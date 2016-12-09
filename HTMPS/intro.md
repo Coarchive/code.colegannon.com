@@ -1,5 +1,5 @@
 # How to make programmers scream
-By Cole Gannon & Marcus Luebke.
+By Cole Gannon & Marcus Luebke & Joshua Bennett.
 ### About this guide
 In this book, I'm going to teach you how to Obfuscate your **JAVASCRIPT** code **[MANUALLY](https://en.wikipedia.org/wiki/Manual).** If you're not looking to spend time manually obfuscating your code, then don't bother reading anymore of this book past this page. Just take a look at the links I reference below.
 ### Intro: Obfuscation, an explanation
@@ -12,7 +12,7 @@ Something I'd like to make painfully clear is that encryption and obfuscation ar
 - [aaencode](http://utf-8.jp/public/aaencode.html)
 - [Closure Compiler](https://closure-compiler.appspot.com/home)
 - [Javascript Obfuscator](https://javascriptobfuscator.com/)
-  The reason I don't recommend this Javascript Obfuscator is because it's pretty easy to deobfuscate, see [here](/jsdf.md).
+  The reason I don't recommend this Javascript Obfuscator is because it's pretty easy to deobfuscate, see [here](jsdf.md).
 - [Dan's Tools](http://www.danstools.com/javascript-obfuscate/index.php)
 
 The Closure Compiler is not only good for obfuscating but can optimise load times too.
