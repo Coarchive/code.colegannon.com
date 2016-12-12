@@ -17,4 +17,4 @@ Something I'd like to make painfully clear is that encryption and obfuscation ar
 
 The Closure Compiler is not only good for obfuscating but can optimize load times too.
 
-Dan's tools make it a pain to read for sure. However, there's nothing that a good few hours of grunt work couldn't do to some javascript code that's obfuscated like this. It'd be boring though. With that, let's move the [Chapter 1](ch1.md)
+Dan's tools make it a pain to read for sure. However, there's nothing that a good few hours of grunt work couldn't do to some javascript code that's obfuscated like this. It'd be boring though. With that, let's move to [Chapter 1](ch1.md)
