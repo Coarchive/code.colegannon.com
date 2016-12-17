@@ -1,5 +1,5 @@
 #How to deobfuscate Dan's Tools Deobfuscation
-Let's put something in to deobfuscate first.
+Let's put something in to obfuscate first.
 ```Javascript
 //Input
 console.log('Hello'+'World');
@@ -64,3 +64,4 @@ Run the code in your console.
 //Hopefully this is easy enough to understand ;)
 ```
 Alternatively, run the code through [jsbeautifier](http://jsbeautifier.org/). It'll probably work.
+-Coalpha
