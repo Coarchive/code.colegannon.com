@@ -27,7 +27,7 @@ function parse(input) {
             console.debug('Currently Parsing '+current.name);
             blankCounter=0;
             currentString=currentString.slice(1); /* Removes the power character. This makes the string easy to use */
-            for(var currentModule=0;currentModule<current.modules; currentModule++){
+            for(var currentModule=0;currentModule<current.modules;currentModule++){
             }
         }else{
             blankCounter++;
