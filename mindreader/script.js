@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /*
 TODO:
 + Permissons - Done
@@ -117,12 +118,15 @@ permission('push', true);
 //  + midi
 permission('midi');
 
-var connection = {};
-connection.onLine = navigator.onLine;
-connection.type = navigator.connection.type;
+var connection={
+    onLine : navigator.onLine,
+    type : navigator.connection.type,
+};
+Object.defineProperty(navigator,"onLine",{set:(x)=>{connection.onLine=this.onLine;}});
 navigator.connection.onchange = function () {
   connection.onLine = navigator.onLine;
-}
+};
 navigator.connection.ontypechange = function () {
   connection.type = navigator.connection.type;
-}
+};
+var cookies=navigator.cookieEnabled;
