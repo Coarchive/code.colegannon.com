@@ -2,7 +2,7 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-	    <link rel="shortcut icon" href="/favicon.png">	    
+	    <link rel="shortcut icon" href="/favicon.png">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto:300,500');
             body {
@@ -21,7 +21,7 @@
             }
             #q {
                 right:17;
-                background-color: #FF5722; 
+                background-color: #FF5722;
                 border-radius:100%;
                 z-index:5;
                 text-align:center;
@@ -55,7 +55,7 @@
             .material-icons.md-48 { font-size: 48px; }
             #r {
                 right:-10px;
-                background-color: orange; 
+                background-color: orange;
                 z-index:1;
                 border-radius:100%;
                 width: 32px;
@@ -72,8 +72,9 @@
             #d {
                 right:24px;
                 opacity:0;
+                display: none;
                 z-index:1;
-                background-color: orangered; 
+                background-color: orangered;
                 border-radius:100%;
                 width: 32px;
                 height: 32px;
@@ -89,7 +90,8 @@
             #h {
                 right:58px;
                 opacity:0;
-                background-color: #D32F2F; 
+                display: none;
+                background-color: #D32F2F;
                 border-radius:100%;
                 z-index:1;
                 width: 32px;
@@ -161,6 +163,10 @@
         <button id='h' onclick='removeLocals()'><i class="material-icons md-18">delete_sweep</i></button>
     <textarea id='foo' class='textarea'></textarea>
         <script>
+        /*jshint esversion:6*/
+        /* Warning, this code is really poorly coded the structure is worse than Marcus' code but it's a little more readable.
+        It's also a little more stupid.
+        */
         var txt;
 	if(location.hash){
 		document.getElementById('foo').value=location.hash.slice(1);
@@ -177,7 +183,7 @@
                 document.getElementById('d').style.backgroundColor=c[4];
                 document.getElementById('h').style.backgroundColor=c[5];
                 document.body.style.color=c[6];
-            }; 
+            }
             var gd;
             if(gd=localStorage.getItem('hmtltseter')){
                 parseCstm(gd);
@@ -191,14 +197,16 @@
                     dfs.style.right=17;
                     rtxt.style.opacity=0;
                     rall.style.opacity=0;
+                    setTimeout(_=>{rtxt.style.display=rall.style.display='none';},1);
                     t=false;
                 }else{
+                    rtxt.style.display=rall.style.display='block';
                     dfs.style.right=87;
                     rtxt.style.opacity=1;
                     rall.style.opacity=1;
                     t=true;
                 }
-                    
+
             }
             function removeLocalTextarea(){
                 document.getElementById('foo').value='';
@@ -227,7 +235,7 @@
             if(e.key=="Tab"){
                 e.preventDefault();
                 var orgin;
-                foo.value=foo.value.splice(orgin=foo.selectionStart,0,'    ')
+                foo.value=foo.value.splice(orgin=foo.selectionStart,0,'    ');
                 foo.selectionStart=foo.selectionEnd=orgin+4;
             }
         };
@@ -236,21 +244,21 @@
             var btn = document.getElementById("q").style;
             var temp=foo.value;
             var winAcc;
-            try{preWindow.location.host}catch(a){winAcc=(a&&false)};
+            try{preWindow.location.host;}catch(a){winAcc=(a&&false);}
             if(typeof winAcc==='undefined'){winAcc=true;}
             console.log(winAcc);
             if(window.preWindow&&(!window.preWindow.closed&&winAcc)){}else{
                 window.preWindow=open();
-            };
+            }
             window.preWindow.document.open();
             window.preWindow.document.write(temp);
             window.preWindow.document.close();
-            if(temp==''){window.preWindow.location='/dogrolld'};
+            if(!temp){window.preWindow.location='/dogrolld';}
             window.preWindow.focus();
             window.onfocus=()=>{
             foo.select();
             };
-        };
+        }
         mnu=false;
         function openMenu(){
 	    localStorage.setItem('mnuul',true);
@@ -260,7 +268,7 @@
             tistl.alignItems='flex-start';
             tistl.justifyContent='flex-end';
             tistl.padding='10';
-            tistl.top='30px'
+            tistl.top='30px';
             document.getElementById('a').style.display='block';
             mnu=true;
         }
@@ -278,7 +286,7 @@
                 var title = document.getElementsByClassName('title')[0],tistl=title.style;
                 tistl.height='20%';
                 tistl.fontSize='6vw';
-                tistl.alignItems='center'
+                tistl.alignItems='center';
                 tistl.justifyContent='center';
                 tistl.padding='0';
                 var x = document.getElementById('a');
@@ -291,9 +299,9 @@
             }
         }
 	var recognition = new webkitSpeechRecognition();
-recognition.onresult = function(event) { 
-  event.results['0']['0'].transcript=="they're taking the Hobbits to Isengard"&&openMenu();
-}
+recognition.onresult = function(event) {
+  if(event.results['0']['0'].transcript=="they're taking the Hobbits to Isengard")openMenu();
+};
 recognition.start();
         </script>
     </body>
