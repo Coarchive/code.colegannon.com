@@ -188,7 +188,7 @@
             if(gd=localStorage.getItem('hmtltseter')){
                 parseCstm(gd);
             }
-            var t=false;
+            var t=false,hide;
             function toggleRemove(){
                 var dfs = document.getElementById('q');
                 var rtxt = document.getElementById('d');
@@ -197,11 +197,12 @@
                     dfs.style.right=17;
                     rtxt.style.opacity=0;
                     rall.style.opacity=0;
-                    setTimeout(_=>{rtxt.style.display=rall.style.display='none';},1000);
+                    hide=setTimeout(_=>{rtxt.style.display=rall.style.display='none';},1000);
                     t=false;
                 }else{
                     rtxt.style.display=rall.style.display='block';
                     dfs.style.right=87;
+		    clearTimeout(hide);
                     rtxt.style.opacity=1;
                     rall.style.opacity=1;
                     t=true;
