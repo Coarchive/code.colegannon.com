@@ -122,7 +122,6 @@ var connection={
     onLine : navigator.onLine,
     type : navigator.connection.type,
 };
-Object.defineProperty(navigator,"onLine",{set:(x)=>{connection.onLine=this.onLine;}});
 navigator.connection.onchange = function () {
   connection.onLine = navigator.onLine;
 };
