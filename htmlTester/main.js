@@ -96,7 +96,8 @@ mnu=false;
 function openMenu(){
 document.getElementById('instructions').innerHTML='Status;Title;Test;Remove;Trash;Locals;';
 localStorage.setItem('mnuul',true);
-    var title = document.getElementsByClassName('title')[0],tistl=title.style;
+    var title = document.getElementsByClassName('title')[0],
+        tistl=title.style;
     tistl.height='50%';
     tistl.fontSize='3vw';
     tistl.alignItems='flex-start';
@@ -107,13 +108,13 @@ localStorage.setItem('mnuul',true);
     mnu=true;
 }
 function toggleMenu() {
-if (mnu) {
-    closeMenu();
-} else {
-    if (localStorage.getItem('mnuul')){
-        openMenu();
+    if (mnu) {
+        closeMenu();
+    } else {
+        if (localStorage.getItem('mnuul')){
+            openMenu();
     }
-}
+    }
 }
 function closeMenu(){
     if(mnu){
