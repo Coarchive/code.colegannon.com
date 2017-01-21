@@ -94,6 +94,7 @@ function test(){
 }
 mnu=false;
 function openMenu(){
+document.getElementById('instructions').innerHTML='Status;Title;Test;Remove;Trash;Locals;';
 localStorage.setItem('mnuul',true);
     var title = document.getElementsByClassName('title')[0],tistl=title.style;
     tistl.height='50%';

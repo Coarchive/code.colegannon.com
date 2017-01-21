@@ -3,22 +3,21 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	    <link rel="shortcut icon" href="/favicon.png">
-        <link href='main.css'rel="stylesheet"></link>
+        <link href='main.css'rel="stylesheet">
     </head>
     <body>
-        <audio id='audio' src='Bark.mp3'></audio>
-        <div id='1' class='status-bar'></div>
+        <audio id='audio' src='Bark.mp3'/>
+        <div id='1' class='status-bar'/>
         <div id='2' class='title'>
             <i onclick='toggleMenu()' class='wrench material-icons'>build</i>
-            <span>HTML TESTER</span>
-            <input id='a'>Status;Title;Test;Remove;Trash;Locals;</input>
+            <span id='instructions'>HTML TESTER</span>
+            <input id='a'/>
         </div>
         <button id='q' onclick='test()'><i class="material-icons">done</i></button>
         <button id='r' onclick='toggleRemove()'><i class="material-icons md-18">block</i></button>
         <button id='d' onclick='removeLocalTextarea()'><i class="material-icons md-18">delete</i></button>
         <button id='h' onclick='removeLocals()'><i class="material-icons md-18">delete_sweep</i></button>
-    	<textarea id='foo' class='textarea'></textarea>
-        <script src='main.js'>
-        </script>
+    	<textarea id='foo' class='textarea'/>
+        <script src='main.js'/>
     </body>
 </html>
