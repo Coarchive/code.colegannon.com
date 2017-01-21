@@ -5,7 +5,7 @@ It's also a little more stupid.
 var txt;
 if(location.hash){
 document.getElementById('foo').value=location.hash.slice(1);
-}else if(txt=localStorage.getItem('lcltext')){
+}else if(txt=localStorage.getItem('lcltext')){//jshint ignore:line
     document.getElementById('foo').value=txt;
 }
     function parseCstm(ste){
@@ -20,7 +20,7 @@ document.getElementById('foo').value=location.hash.slice(1);
         document.body.style.color=c[6];
     }
     var gd;
-    if(gd=localStorage.getItem('hmtltseter')){
+    if(gd=localStorage.getItem('hmtltseter')){//jshint ignore:line
         parseCstm(gd);
     }
     var t=false,hide;
@@ -78,9 +78,8 @@ function test(){
     var btn = document.getElementById("q").style;
     var temp=foo.value;
     var winAcc;
-    try{preWindow.location.host;}catch(a){winAcc=(a&&false);}
+    try{preWindow.location.host;}catch(a){winAcc=(a&&false);}//jshint ignore:line
     if(typeof winAcc==='undefined'){winAcc=true;}
-    console.log(winAcc);
     if(window.preWindow&&(!window.preWindow.closed&&winAcc)){}else{
         window.preWindow=open();
     }
