@@ -1,7 +1,13 @@
 /*jshint esversion:6*/
-/* Warning, this code is really poorly coded the structure is worse than Marcus' code but it's a little more readable.
-It's also a little more stupid.
-*/
+function loadLocalOptions(){
+
+}
+
+
+
+
+
+
 var txt;
 if(location.hash){
 document.getElementById('foo').value=location.hash.slice(1);
@@ -96,7 +102,8 @@ mnu=false;
 function openMenu(){
 document.getElementById('instructions').innerHTML='Status;Title;Test;Remove;Trash;Locals;';
 localStorage.setItem('mnuul',true);
-    var title = document.getElementsByClassName('title')[0],tistl=title.style;
+    var title = document.getElementsByClassName('title')[0],
+        tistl=title.style;
     tistl.height='50%';
     tistl.fontSize='3vw';
     tistl.alignItems='flex-start';
@@ -107,13 +114,13 @@ localStorage.setItem('mnuul',true);
     mnu=true;
 }
 function toggleMenu() {
-if (mnu) {
-    closeMenu();
-} else {
-    if (localStorage.getItem('mnuul')){
-        openMenu();
+    if (mnu) {
+        closeMenu();
+    } else {
+        if (localStorage.getItem('mnuul')){
+            openMenu();
     }
-}
+    }
 }
 function closeMenu(){
     if(mnu){

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900');
+body {
+    margin:0px;
+    font-family:'Source Sans Pro', sans-serif;
+    overflow-y:hidden;
+}
+.icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+.icon18 {
+    font-size: 18px;
+}
+.icon24 {
+    font-size: 24px;
+}
+.icon36 {
+    font-size: 36px;
+}
+.icon48 {
+    font-size: 48px;
+}
+.title {
+    height:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('codeshot.png');
+    background-position: 20px 20px;
+}
+.title span {
+    color:#C7C7C7;
+    font-weight:600;
+    font-size:40px;
+}
