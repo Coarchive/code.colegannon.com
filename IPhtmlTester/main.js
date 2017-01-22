@@ -1,18 +1,27 @@
 /*jshint esversion:6*/
+var _=document;
 var editor = ace.edit("editor"),session = editor.getSession();
+editor.setShowPrintMargin(false);
 function setTheme(theme){
     editor.setTheme("ace/theme/"+theme);
 }
 function changeMode(mode){
     session.setMode("ace/mode/"+mode);
 }
+function setFontSize(size){
+    _.getElementById('editor').style.fontSize=size+'px';
+}
 setTheme('monokai');
 changeMode('html');
+
 var options={
     speech:!1
 };
 function loadLocalOptions(){
 
+}
+function toggleMenu(element){
+    console.log(element.checked);
 }
 function testCode(){
     var htmlWindow=open();
