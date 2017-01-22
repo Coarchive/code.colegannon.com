@@ -7,20 +7,20 @@
         <script src="http://code.colegannon.com/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
-        <div class="menu">
-          <input type="checkbox" id="menu" onchange="toggleMenu(this)"/>
-          <label for="menu" class="menuLable">
-            <div class="bars bar-1"></div>
-            <div class="bars bar-2"></div>
-            <div class="bars bar-3"></div>
-          </label>
-        </div>
         <div class='title'>
+            <div class="menu">
+              <input type="checkbox" id="menu" onchange="toggleMenu(this)"/>
+              <label for="menu" class="menuLable">
+                <div class="bars bar-1"></div>
+                <div class="bars bar-2"></div>
+                <div class="bars bar-3"></div>
+              </label>
+            </div>
             <span>HTML TESTER<span class='dot' style='color:#f1d204;'>.</span></span>
             <button onclick='testCode()' class='test'>Test</button>
         </div>
         <div class="options">
-            
+
         </div>
         <div id="editor"></div>
         <script src='main.js'></script>
