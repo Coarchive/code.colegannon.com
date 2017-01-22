@@ -6,7 +6,7 @@ function setTheme(theme){
 function changeMode(mode){
     session.setMode("ace/mode/"+mode);
 }
-setTheme('dawn');
+setTheme('monokai');
 changeMode('html');
 var options={
     speech:!1
@@ -17,7 +17,7 @@ function loadLocalOptions(){
 function testCode(){
     var htmlWindow=open();
     htmlWindow.document.open();
-    htmlWindow.document.write(editor.getValue);
+    htmlWindow.document.write(editor.getValue());
     htmlWindow.document.close();
 }
 if(options.speech){
