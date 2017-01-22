@@ -19,11 +19,11 @@
     return x;
 }</div>
 
-<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
+    var editor = ace.edit("editor"),session = editor.getSession();
+    editor.setTheme("ace/theme/tomorrow");
+    session.setMode("mode/javascript");
 </script>
 </body>
 </html>
