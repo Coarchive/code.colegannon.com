@@ -4,6 +4,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	    <link rel="shortcut icon" href="/favicon.png">
         <link href='main.css'rel="stylesheet">
+        <script src="/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <div class="menu">
@@ -16,24 +17,7 @@
         </div>
         <div class='title'>
             <span>HTML TESTER<span class='dot' style='color:#f1d204;'>.</span></span>
-            <button class='test'>Test</button>
+            <button onclick='testCode()' class='test'>Test</button>
         </div>
-        <textarea id='htmlInput'>
-            <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset="utf-8">
-                    <title></title>
-                    <style media="screen">
-
-                    </style>
-                </head>
-                <body>
-                    <script type="text/javascript">
-
-                    </script>
-                </body>
-            </html>
-        </textarea>
     </body>
 </html>
