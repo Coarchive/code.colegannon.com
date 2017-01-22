@@ -8,9 +8,9 @@ function changeMode(mode){
 }
 setTheme('dawn');
 changeMode('html');
-
-
-
+var options={
+    speech:!1
+};
 function loadLocalOptions(){
 
 }
@@ -20,7 +20,6 @@ function testCode(){
     htmlWindow.document.write(editor.getValue);
     htmlWindow.document.close();
 }
-/*
 if(options.speech){
     var recognition = new webkitSpeechRecognition();
     recognition.onresult = function(event) {
@@ -29,4 +28,3 @@ if(options.speech){
     };
     recognition.start();
 }
-*/
