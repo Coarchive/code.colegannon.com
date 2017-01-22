@@ -1,5 +1,5 @@
 /*jshint esversion:6*/
-var _=document;
+var _=document,l=localStorage;
 var editor = ace.edit("editor"),session = editor.getSession();
 editor.setShowPrintMargin(false);
 function setTheme(theme){
@@ -18,7 +18,9 @@ var options={
     speech:!1
 };
 function loadLocalOptions(){
+    if(l.getItem('optionsSet')){
 
+    }
 }
 function toggleMenu(element){
     console.log(element.checked);
