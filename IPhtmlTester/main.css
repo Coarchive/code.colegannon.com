@@ -126,7 +126,6 @@ html, body {
 .menu input[type=checkbox]:checked ~ .menuLable .bars {
     background:#f1d204;
 }
-#htmlInput {
-    width:100%;
+#editor {
     height:100%;
 }
