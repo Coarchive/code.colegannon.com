@@ -23,13 +23,20 @@ function loadLocalOptions(){
     }
 }
 function toggleMenu(element){
-    console.log(element.checked);
+    if(element.checked){
+
+    }
 }
 function testCode(){
-    var htmlWindow=open();
-    htmlWindow.document.open();
-    htmlWindow.document.write(editor.getValue());
-    htmlWindow.document.close();
+    var htmlWindow=open(),
+        code;
+    if(code=editor.getValue()){
+        htmlWindow.document.open();
+        htmlWindow.document.write(code);
+        htmlWindow.document.close();
+    }else{
+        htmlWindow.location='dogrolld';
+    }
 }
 if(options.speech){
     var recognition = new webkitSpeechRecognition();
