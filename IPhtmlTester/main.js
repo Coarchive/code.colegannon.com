@@ -6,7 +6,8 @@ function setTheme(theme){
 function changeMode(mode){
     session.setMode("ace/mode/"+mode);
 }
-
+setTheme('dawn');
+changeMode('html');
 
 
 
