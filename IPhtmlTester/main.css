@@ -153,3 +153,6 @@ body::-webkit-scrollbar {
     height:0%;
     opacity:0;
 }
+.menu input[type=checkbox]:checked ~ .title {
+    height:0px;
+}
