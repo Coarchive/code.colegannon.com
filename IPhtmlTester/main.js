@@ -30,9 +30,10 @@ function loadLocalOptions(){
 }
 function toggleMenu(element){
     if(element.checked){
-        options.style.height='40%';
+        options.style.height='50%';
         editorElement.style.height='0px';
         editorElement.style.opacity=0;
+        
     }else{
         options.style.height='0px';
         editorElement.style.height='100%';
