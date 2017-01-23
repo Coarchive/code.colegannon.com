@@ -20,7 +20,7 @@ function setFontSize(size){
     editorElement.style.fontSize=size+'px';
 }
 /* O P T I O N S   A N D   L O C A L   S T O R A G E */
-var options={
+var settings={
     speech:!1
 };
 function loadLocalOptions(){
@@ -47,7 +47,7 @@ function testCode(){
 }
 
 /* S P E E C H   R E C O G N I T I O N */
-if(options.speech){
+if(settings.speech){
     var recognition = new webkitSpeechRecognition();
     recognition.onresult = function(event) {
     if(event.results['0']['0'].transcript=="they're taking the Hobbits to Isengard")
