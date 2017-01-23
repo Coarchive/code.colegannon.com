@@ -146,13 +146,10 @@ body::-webkit-scrollbar {
     background:#FFF;
     transition: all .3s;
 }
-.menu input[type=checkbox]:checked ~ .options {
+.menu input[type=checkbox]:checked + .options {
     height:40%;
 }
-.menu input[type=checkbox]:checked ~ #editor {
+.menu input[type=checkbox]:checked + #editor {
     height:0%;
     opacity:0;
-}
-.menu input[type=checkbox]:checked ~ .title {
-    height:0px;
 }
