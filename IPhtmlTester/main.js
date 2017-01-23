@@ -30,7 +30,13 @@ function loadLocalOptions(){
 }
 function toggleMenu(element){
     if(element.checked){
-        
+        options.style.height='40%';
+        editorElement.style.height='0px';
+        editorElement.style.opacity=0;
+    }else{
+        options.style.height='0px';
+        editorElement.style.height='100%';
+        editorElement.style.opacity=1;
     }
 }
 
