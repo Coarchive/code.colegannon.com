@@ -138,4 +138,11 @@ body::-webkit-scrollbar {
 #editor {
     height:100%;
     font-size: 15px;
+    transition: opacity .3s;
+}
+.options {
+    height:0%;
+    width:100%;
+    background:#002d35;
+    transition: all .3s;
 }
