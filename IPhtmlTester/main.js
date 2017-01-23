@@ -1,5 +1,13 @@
 /*jshint esversion:6*/
+/* B O I L E R   P L A T E */
 var _=document,l=localStorage;
+
+/* E L E M E N T S */
+var titleText=_.getElementById('title'),
+    options=_.getElementsByClassName('options')[0],
+    editorElement=_.getElementById('editor');
+
+/* A C E   E D I T O R */
 var editor = ace.edit("editor"),session = editor.getSession();
 editor.setShowPrintMargin(false);
 function setTheme(theme){
@@ -9,11 +17,9 @@ function changeMode(mode){
     session.setMode("ace/mode/"+mode);
 }
 function setFontSize(size){
-    _.getElementById('editor').style.fontSize=size+'px';
+    editorElement.style.fontSize=size+'px';
 }
-setTheme('monokai');
-changeMode('html');
-
+/* O P T I O N S   A N D   L O C A L   S T O R A G E */
 var options={
     speech:!1
 };
@@ -24,9 +30,10 @@ function loadLocalOptions(){
 }
 function toggleMenu(element){
     if(element.checked){
-
+        
     }
 }
+
 function testCode(){
     var htmlWindow=open(),
         code;
@@ -38,6 +45,8 @@ function testCode(){
         htmlWindow.location='dogrolld';
     }
 }
+
+/* S P E E C H   R E C O G N I T I O N */
 if(options.speech){
     var recognition = new webkitSpeechRecognition();
     recognition.onresult = function(event) {
