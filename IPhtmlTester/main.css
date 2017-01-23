@@ -138,11 +138,18 @@ body::-webkit-scrollbar {
 #editor {
     height:100%;
     font-size: 15px;
-    transition: opacity .3s;
+    transition: all .3s;
 }
 .options {
     height:0%;
     width:100%;
-    background:#003037;
+    background:#FFF;
     transition: all .3s;
+}
+.menu input[type=checkbox]:checked ~ .options {
+    height:40%;
+}
+.menu input[type=checkbox]:checked ~ #editor {
+    height:0%;
+    opacity:0;
 }
