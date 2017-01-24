@@ -22,7 +22,7 @@ function setFontSize(size){
 /* O P T I O N S   A N D   L O C A L   S T O R A G E */
 var settings={
     speech:!1,
-    mode:'html',
+    mode:'javascript',
     html(){
         return editor.getValue();
     },
@@ -32,10 +32,11 @@ var settings={
     marcus(){
         return '_=>{};';
     },
+    theme:'cobalt',
     theme:'monokai',
-    focusOnReturn:''
+    focusOnReturn:!1,
 };
-+function loadLocalOptions(){
++function loadLocalStorage(){
     if(l.getItem('optionsSet')){
 
     }
@@ -58,7 +59,7 @@ function toggleMenu(element){
 }
 var htmlWindow;
 function testCode(){
-        htmlWindow&&htmlWindow.closed&&[htmlWindow=open()];
+        htmlWindow&&!htmlWindow.closed||[htmlWindow=open()];
         var code=editor.getValue();
     if(code){
         htmlWindow.document.open();
