@@ -21,35 +21,51 @@ function setFontSize(size){
 }
 /* O P T I O N S   A N D   L O C A L   S T O R A G E */
 var settings={
-    speech:!1
+    speech:!1,
+    mode:'html',
+    html(){
+        return editor.getValue();
+    },
+    javascript(){
+        return '<script>'+editor.getValue()+'</script>';
+    },
+    marcus(){
+        return '_=>{};';
+    },
+    theme:'monokai',
+    focusOnReturn:''
 };
-function loadLocalOptions(){
++function loadLocalOptions(){
     if(l.getItem('optionsSet')){
 
     }
-}
+}();
++function loadSettings(){
+    changeMode(settings.mode);
+    setTheme(settings.theme);
+}();
 function toggleMenu(element){
     if(element.checked){
         options.style.height='50%';
         editorElement.style.height='0px';
         editorElement.style.opacity=0;
-        
+
     }else{
         options.style.height='0px';
         editorElement.style.height='100%';
         editorElement.style.opacity=1;
     }
 }
-
+var htmlWindow;
 function testCode(){
-    var htmlWindow=open(),
-        code;
-    if(code=editor.getValue()){
+        htmlWindow&&htmlWindow.closed&&[htmlWindow=open()];
+        var code=editor.getValue();
+    if(code){
         htmlWindow.document.open();
-        htmlWindow.document.write(code);
+        htmlWindow.document.write(settings[settings.mode]());
         htmlWindow.document.close();
     }else{
-        htmlWindow.location='dogrolld';
+        htmlWindow.location='/dogrolld';
     }
 }
 
