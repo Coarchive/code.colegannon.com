@@ -19,10 +19,10 @@ function changeMode(mode){
 function setFontSize(size){
     editorElement.style.fontSize=size+'px';
 }
-/* O P T I O N S   A N D   L O C A L   S T O R A G E */
+/* S E T T I N G S   A N D   L O C A L   S T O R A G E */
 var settings={
     speech:!1,
-    mode:'javascript',
+    mode:'html',
     html(){
         return editor.getValue();
     },
@@ -38,40 +38,52 @@ var settings={
 },
     textData={
         html:`<!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="utf-8">
-                <title></title>
-                <style media="screen">
-
-                </style>
-            </head>
-            <body>
-
-            </body>
-            <script type="text/javascript">
-
-            </script>
-        </html>`,
-        javascript:'',
-
-    }
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+    </script>
+</body>
+</html>`,
+        javascript:'"Hello World!";',
+    };
 function loadLocalStorage(){
-    if(l.getItem('settings')){
-
+    if(l.getItem('settingsSaved')){
+        settings=JSON.parse(l.getItem('settings'));
+    }
+    if(l.getItem('dataSaved')){
+        textData=JSON.parse(l.getItem('textData'));
     }
 }
 function loadSettings(){
     changeMode(settings.mode);
     setTheme(settings.theme);
 }
-loadSettings();
+function loadTextData(){
+    editor.setValue(textData[settings.mode]);
+}
+function load(){
+    loadLocalStorage();
+    loadSettings();
+    loadTextData();
+}
+load();
+function saveLocalStorage(){
+    localStorage.setItem('settingsSaved','('); //Infuriating innit?
+    localStorage.setItem("settings",JSON.stringify(settings));
+    localStorage.setItem('dataSaved','if{'); //This one's even worse
+    localStorage.setItem("textData",JSON.stringify(textData));
+}
 function toggleMenu(element){
     if(element.checked){
         options.style.height='50%';
         editorElement.style.height='0px';
         editorElement.style.opacity=0;
-
     }else{
         options.style.height='0px';
         editorElement.style.height='100%';
@@ -89,14 +101,4 @@ function testCode(){
     }else{
         htmlWindow.location='/dogrolld';
     }
-}
-
-/* S P E E C H   R E C O G N I T I O N */
-if(settings.speech){
-    var recognition = new webkitSpeechRecognition();
-    recognition.onresult = function(event) {
-    if(event.results['0']['0'].transcript=="they're taking the Hobbits to Isengard")
-        openMenu();
-    };
-    recognition.start();
 }
