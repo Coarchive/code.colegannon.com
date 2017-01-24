@@ -20,7 +20,9 @@
             <button onclick='testCode()' class='test'>Test</button>
         </div>
         <div class="options">
-            Options and stuff.
+            <input type="checkbox" id="menu"/>
+            <button onclick='editor.setValue("")'>Clear Editor</button>
+            <button onclick='removeLocals()'>Delete Saved Data</button>
         </div>
         <div id="editor"></div>
         <script src='main.js'></script>

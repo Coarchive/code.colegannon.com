@@ -32,7 +32,6 @@ var settings={
     marcus(){
         return '_=>{};';
     },
-    theme:'cobalt',
     theme:'monokai',
     focusOnReturn:!1,
 },
@@ -103,10 +102,14 @@ load.all();
 apply.all();
 function toggleMenu(element){
     if(element.checked){
+        //Open the menu
         options.style.height='50%';
         editorElement.style.height='0px';
         editorElement.style.opacity=0;
     }else{
+        //Close the menu
+        save.settings();
+        apply.settings();
         options.style.height='0px';
         editorElement.style.height='100%';
         editorElement.style.opacity=1;
