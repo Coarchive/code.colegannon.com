@@ -52,33 +52,55 @@ var settings={
 </html>`,
         javascript:'"Hello World!";',
     };
-function loadLocalStorage(){
-    if(l.getItem('settingsSaved')){
-        settings=JSON.parse(l.getItem('settings'));
+var load = {
+    description:'Puts data from the localStorage into the script',
+    settings(){
+        if(l.getItem('settingsSaved')){
+            settings=JSON.parse(l.getItem('settings'));
+        }
+    },
+    data(){
+        if(l.getItem('dataSaved')){
+            textData=JSON.parse(l.getItem('textData'));
+        }
+    },
+    all(){
+        this.data();
+        this.settings();
     }
-    if(l.getItem('dataSaved')){
-        textData=JSON.parse(l.getItem('textData'));
+};
+load.all();
+var apply = {
+    description:'Applys the data to the DOM',
+    settings(){
+        changeMode(settings.mode);
+        setTheme(settings.theme);
+    },
+    textData(){
+        editor.setValue(textData[settings.mode]);
+    },
+    all(){
+        this.textData();
+        this.settings();
     }
-}
-function loadSettings(){
-    changeMode(settings.mode);
-    setTheme(settings.theme);
-}
-function loadTextData(){
-    editor.setValue(textData[settings.mode]);
-}
-function load(){
-    loadLocalStorage();
-    loadSettings();
-    loadTextData();
-}
-load();
-function saveLocalStorage(){
-    localStorage.setItem('settingsSaved','('); //Infuriating innit?
-    localStorage.setItem("settings",JSON.stringify(settings));
-    localStorage.setItem('dataSaved','if{'); //This one's even worse
-    localStorage.setItem("textData",JSON.stringify(textData));
-}
+};
+var save = {
+    settings(){
+        localStorage.setItem('settingsSaved','('); //Infuriating innit?
+        localStorage.setItem("settings",JSON.stringify(settings));
+    },
+    textData(){
+        textData[settings.mode]=editor.getValue();
+        localStorage.setItem('dataSaved','if{'); //This one's even worse
+        localStorage.setItem("textData",JSON.stringify(textData));
+    },
+    all(){
+        this.settings();
+        this.textData();
+    }
+};
+load.all();
+apply.all();
 function toggleMenu(element){
     if(element.checked){
         options.style.height='50%';
