@@ -35,16 +35,37 @@ var settings={
     theme:'cobalt',
     theme:'monokai',
     focusOnReturn:!1,
-};
-+function loadLocalStorage(){
-    if(l.getItem('optionsSet')){
+},
+    textData={
+        html:`<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title></title>
+                <style media="screen">
+
+                </style>
+            </head>
+            <body>
+
+            </body>
+            <script type="text/javascript">
+
+            </script>
+        </html>`,
+        javascript:'',
 
     }
-}();
-+function loadSettings(){
+function loadLocalStorage(){
+    if(l.getItem('settings')){
+
+    }
+}
+function loadSettings(){
     changeMode(settings.mode);
     setTheme(settings.theme);
-}();
+}
+loadSettings();
 function toggleMenu(element){
     if(element.checked){
         options.style.height='50%';
